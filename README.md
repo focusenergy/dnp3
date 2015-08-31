@@ -16,5 +16,13 @@ Overview
 
 Opendnp3 is a portable, scalable, and rigorously tested implementation 
 of the DNP3 (www.dnp.org) protocol stack written in C++11. The library 
-is designed for high-performance applications like many concurrent TCP
-sessions or huge device simulations. It also embeds very nicely on Linux.
+can handle the largest front end processor loads, but can also be
+ported to run on various microcontrollers.
+
+Langauge bindings are available. Consult the documentation.
+
+Build Steps
+===========
+autoreconf -f -i
+./configure
+make -j6
