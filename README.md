@@ -19,3 +19,9 @@ can handle the largest front end processor loads, but can also be
 ported to run on various microcontrollers.
 
 Langauge bindings are available. Consult the documentation.
+
+Build Steps
+===========
+autoreconf -f -i
+./configure
+make -j6
