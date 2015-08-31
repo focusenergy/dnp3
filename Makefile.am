@@ -9,8 +9,9 @@ OPENDNP3_INCLUDE = $(top_srcdir)/cpp/libs/opendnp3/src
 ASIOPAL_INCLUDE = $(top_srcdir)/cpp/libs/asiopal/src
 ASIODNP3_INCLUDE = $(top_srcdir)/cpp/libs/asiodnp3/src
 CATCH_INCLUDE = $(top_srcdir)/cpp/tests/catch
+RAPIDJSON_INCLUDE = $(top_srcdir)/thirdparty/rapidjson/include
 
-bin_PROGRAMS = masterdemo outstationdemo
+bin_PROGRAMS = masterdemo outstationdemo outstation
 
 lib_LTLIBRARIES = libopenpal.la libasiopal.la libopendnp3.la libasiodnp3.la
 
@@ -210,6 +211,13 @@ outstationdemo_CXXFLAGS = -I$(OPENPAL_INCLUDE) -I$(ASIOPAL_INCLUDE) -I $(OPENDNP
 outstationdemo_LDFLAGS = -pthread
 outstationdemo_LDADD = libopenpal.la libasiopal.la libopendnp3.la libasiodnp3.la
 outstationdemo_SOURCES = cpp/examples/outstation/DemoMain.cpp
+
+outstation_CXXFLAGS = -I$(OPENPAL_INCLUDE) -I$(ASIOPAL_INCLUDE) -I $(OPENDNP3_INCLUDE) -I$(ASIODNP3_INCLUDE) -I$(RAPIDJSON_INCLUDE) $(ASIO_CONFIG) -Wl,--no-as-needed
+outstation_LDFLAGS = -pthread
+outstation_LDADD = libopenpal.la libasiopal.la libopendnp3.la libasiodnp3.la
+outstation_SOURCES = \
+cpp/outstation/JSONCommandHandler.cpp \
+cpp/outstation/Main.cpp
 
 check_PROGRAMS = openpaltest dnp3test
 #TESTS = openpaltest dnp3test

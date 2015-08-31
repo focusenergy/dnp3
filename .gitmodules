@@ -1,4 +1,4 @@
-[submodule "include/rapidjson"]
-	path = include/rapidjson
+[submodule "thirdparty/rapidjson"]
+	path = thirdparty/rapidjson
 	url = ../rapidjson/
 	branch = develop
