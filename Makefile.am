@@ -213,7 +213,7 @@ outstationdemo_LDADD = libopenpal.la libasiopal.la libopendnp3.la libasiodnp3.la
 outstationdemo_SOURCES = cpp/examples/outstation/DemoMain.cpp
 
 outstation_CXXFLAGS = -I$(OPENPAL_INCLUDE) -I$(ASIOPAL_INCLUDE) -I $(OPENDNP3_INCLUDE) -I$(ASIODNP3_INCLUDE) -I$(RAPIDJSON_INCLUDE) $(ASIO_CONFIG) -Wl,--no-as-needed
-outstation_LDFLAGS = -pthread
+outstation_LDFLAGS = -pthread -lboost_system
 outstation_LDADD = libopenpal.la libasiopal.la libopendnp3.la libasiodnp3.la
 outstation_SOURCES = \
 cpp/outstation/JSONCommandHandler.cpp \
