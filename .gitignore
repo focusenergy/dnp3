@@ -100,5 +100,11 @@ coverage.info
 cpp/demos/cover.info
 cpp/demos/cover_html/
 
+# eclipse generated files
+RemoteSystemsTempFiles
+.metadata
+.settings
+.autotools
+
 # apps
 outstation
