@@ -107,4 +107,4 @@ RemoteSystemsTempFiles
 .autotools
 
 # apps
-outstation
+/outstation

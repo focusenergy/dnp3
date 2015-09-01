@@ -29,6 +29,7 @@
 #include <unistd.h>
 
 #include "JSONCommandHandler.h"
+#include "TCPServer.cpp"
 
 using namespace std;
 using namespace opendnp3;
@@ -52,20 +53,18 @@ void ConfigureDatabase(DatabaseConfigView view) {
 }
 
 int main(int argc, char* argv[]) {
-	const uint32_t FILTERS = levels::NORMAL;
-
 	DNP3Manager manager(1);
 	manager.AddLogSubscriber(&ConsoleLogger::Instance());
 
-	auto pChannel = manager.AddTCPServer("server", FILTERS, TimeDuration::Seconds(5), TimeDuration::Seconds(5), "0.0.0.0", 20000);
+	auto pChannel = manager.AddTCPServer("server", levels::NORMAL, TimeDuration::Seconds(5), TimeDuration::Seconds(5), "0.0.0.0", 20000);
 	pChannel->AddStateListener([](ChannelState state)
 	{
 		std::cout << "channel state: " << ChannelStateToString(state) << std::endl;
 	});
 
 	OutstationStackConfig stackConfig;
-	stackConfig.dbTemplate = DatabaseTemplate::AllTypes(10);
-	stackConfig.outstation.eventBufferConfig = EventBufferConfig::AllTypes(10);
+	stackConfig.dbTemplate = DatabaseTemplate::AllTypes(5);
+	stackConfig.outstation.eventBufferConfig = EventBufferConfig::AllTypes(5);
 	stackConfig.link.LocalAddr = 10;
 	stackConfig.link.RemoteAddr = 1;
 
@@ -78,6 +77,15 @@ int main(int argc, char* argv[]) {
 	// Configure and start outstation
 	ConfigureDatabase(pOutstation->GetConfigView());
 	pOutstation->Enable();
+
+
+	try {
+		boost::asio::io_service io_service;
+		TCPServer s(io_service, 3384);
+		io_service.run();
+	} catch (std::exception& e) {
+		std::cerr << "Exception: " << e.what() << "\n";
+	}
 
 	// Initiate shutdown when signal received
 	std::signal(SIGINT, signal_handler);
