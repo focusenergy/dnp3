@@ -22,6 +22,7 @@ Langauge bindings are available. Consult the documentation.
 
 Build Steps
 ===========
+```bash
 cd thirdparty
 ./build.sh
 cd ../
@@ -29,3 +30,4 @@ cd ../
 autoreconf -f -i
 ./configure
 make -j6
+```
