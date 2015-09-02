@@ -41,21 +41,14 @@ private:
 				sbuf.sputn(data_,length);
 				do_read();
 			} else if (error.value() == boost::system::errc::no_such_file_or_directory) {
+				// TODO deserialize JSON
 				std::cout << sbuf.str() << std::endl;
-				  void *array[10];
-				  size_t size;
-
-				  // get void*'s for all entries on the stack
-				  size = backtrace(array, 10);
-
-				  // print out all the frames to stderr
-				  fprintf(stderr, "Error:\n");
-				  backtrace_symbols_fd(array, size, STDERR_FILENO);
 			}
 		});
 	}
 
 	void do_write(std::size_t length) {
+		// TODO serialize JSONCommand to this socket
 		/*auto self(shared_from_this());
 		 boost::asio::async_write(socket_, boost::asio::buffer(data_, length), [this, self](boost::system::error_code ec, std::size_t length)
 		 {
@@ -68,7 +61,7 @@ private:
 
 	tcp::socket socket_;
 	enum {
-		buffer_size = 10
+		buffer_size = 1024
 	};
 	char data_[buffer_size];
 	std::stringbuf sbuf;
