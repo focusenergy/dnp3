@@ -11,15 +11,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef OPENDNP3_JSONCOMMANDHANDLER_H
-#define OPENDNP3_JSONCOMMANDHANDLER_H
+#ifndef OPENDNP3_ASYNCCOMMANDHANDLER_H
+#define OPENDNP3_ASYNCCOMMANDHANDLER_H
 
 #include <opendnp3/outstation/ICommandHandler.h>
+#include <boost/lockfree/queue.hpp>
+#include "AsyncCommand.cpp"
 
-namespace opendnp3 {
+using namespace opendnp3;
 
-class JSONCommandHandler: public ICommandHandler {
+class AsyncCommandHandler: public ICommandHandler {
 public:
+	~AsyncCommandHandler() override final;
 
 	CommandStatus Select(const ControlRelayOutputBlock& command, uint16_t aIndex) override final;
 	CommandStatus Operate(const ControlRelayOutputBlock& command, uint16_t aIndex) override final;
@@ -36,20 +39,12 @@ public:
 	CommandStatus Select(const AnalogOutputDouble64& command, uint16_t aIndex) override final;
 	CommandStatus Operate(const AnalogOutputDouble64& command, uint16_t aIndex) override final;
 
-	static JSONCommandHandler& Instance() {
-		static JSONCommandHandler instance;
-		return instance;
-	}
+	AsyncCommand pop();
 
 private:
-	JSONCommandHandler() {
-	}
-
-	JSONCommandHandler(JSONCommandHandler const&) = delete;
-	void operator=(JSONCommandHandler const&) = delete;
+	bool push(AsyncCommand command);
+	boost::lockfree::queue<AsyncCommand*> queue_{32};
 };
-
-}
 
 #endif
 

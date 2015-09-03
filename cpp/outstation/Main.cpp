@@ -18,7 +18,8 @@
 #include <asiodnp3/MeasUpdate.h>
 
 #include <asiopal/UTCTimeSource.h>
-
+#include <cpp/outstation/AsyncCommandHandler.h>
+#include <cpp/outstation/OutstationJSONTCPServer.cpp>
 #include <opendnp3/outstation/Database.h>
 #include <opendnp3/LogLevels.h>
 
@@ -28,8 +29,6 @@
 #include <csignal>
 #include <unistd.h>
 
-#include "JSONCommandHandler.h"
-#include "TCPServer.cpp"
 
 using namespace std;
 using namespace opendnp3;
@@ -72,24 +71,26 @@ int main(int argc, char* argv[]) {
 	// 1. convert incoming JSON to MeasUpdate and apply to outstation instance
 	// 2. JSONCommandHandler incoming DNP3 commands should convert and forward via JSON
 
-	auto pOutstation = pChannel->AddOutstation("outstation", JSONCommandHandler::Instance(), DefaultOutstationApplication::Instance(), stackConfig);
+	AsyncCommandHandler handler;
+	IOutstation* pOutstation = pChannel->AddOutstation("outstation", handler, DefaultOutstationApplication::Instance(), stackConfig);
 
 	// Configure and start outstation
 	ConfigureDatabase(pOutstation->GetConfigView());
 	pOutstation->Enable();
 
-
 	try {
 		boost::asio::io_service io_service;
-		TCPServer s(io_service, 3384);
+		OutstationJSONTCPServer s(io_service, 3384, pOutstation);
 		io_service.run();
+
+		// Initiate shutdown when signal received
+		std::signal(SIGINT, signal_handler);
+		pause();
+
+		io_service.stop();
 	} catch (std::exception& e) {
 		std::cerr << "Exception: " << e.what() << "\n";
 	}
-
-	// Initiate shutdown when signal received
-	std::signal(SIGINT, signal_handler);
-	pause();
 
 	pOutstation->Shutdown();
 	manager.Shutdown();
