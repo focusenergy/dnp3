@@ -213,10 +213,10 @@ outstationdemo_LDADD = libopenpal.la libasiopal.la libopendnp3.la libasiodnp3.la
 outstationdemo_SOURCES = cpp/examples/outstation/DemoMain.cpp
 
 outstation_CXXFLAGS = -I$(OPENPAL_INCLUDE) -I$(ASIOPAL_INCLUDE) -I $(OPENDNP3_INCLUDE) -I$(ASIODNP3_INCLUDE) -I$(RAPIDJSON_INCLUDE) $(ASIO_CONFIG) -Wl,--no-as-needed
-outstation_LDFLAGS = -pthread -lboost_system
+outstation_LDFLAGS = -pthread -lboost_system -lboost_thread
 outstation_LDADD = libopenpal.la libasiopal.la libopendnp3.la libasiodnp3.la
 outstation_SOURCES = \
-cpp/outstation/JSONCommandHandler.cpp \
+cpp/outstation/AsyncCommandHandler.cpp \
 cpp/outstation/Main.cpp
 
 check_PROGRAMS = openpaltest dnp3test
@@ -314,5 +314,3 @@ cpp/tests/opendnp3tests/src/TransportLoopbackTestObject.cpp \
 cpp/tests/opendnp3tests/src/TransportScalabilityTestObject.cpp \
 cpp/tests/opendnp3tests/src/TransportStackPair.cpp \
 cpp/tests/opendnp3tests/src/TransportTestObject.cpp
-
-

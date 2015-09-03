@@ -13,18 +13,26 @@
  */
 
 #include <boost/asio.hpp>
+#include <boost/thread/thread.hpp>
 #include <stdio.h>
 #include <execinfo.h>
 #include <signal.h>
 #include <stdlib.h>
 #include <unistd.h>
 
+#include <rapidjson/document.h>
+#include <rapidjson/writer.h>
+#include <rapidjson/stringbuffer.h>
+
 using boost::asio::ip::tcp;
 
-class TCPSession: public std::enable_shared_from_this<TCPSession> {
+using namespace asiodnp3;
+using namespace rapidjson;
+
+class JSONTCPSession: public std::enable_shared_from_this<JSONTCPSession> {
 public:
-	TCPSession(tcp::socket socket) :
-			socket_(std::move(socket)) {
+	JSONTCPSession(tcp::socket socket, IOutstation* pOutstation) :
+			socket_(std::move(socket)), pOutstation_ { pOutstation } {
 	}
 
 	void start() {
@@ -34,6 +42,8 @@ public:
 private:
 	void do_read() {
 		auto self(shared_from_this());
+		std::cout << "nope!" << this << std::endl;
+		std::cout << "yep8" << &socket_ << std::endl;
 		socket_.async_receive(boost::asio::buffer(data_, 1024), [this, self](boost::system::error_code error, std::size_t length)
 		{
 			if (!error)
@@ -41,13 +51,34 @@ private:
 				sbuf.sputn(data_,length);
 				do_read();
 			} else if (error.value() == boost::system::errc::no_such_file_or_directory) {
-				// TODO deserialize JSON
-				std::cout << sbuf.str() << std::endl;
+				// Convert stringbuf to char[] and reset
+				sbuf.pubseekpos(0);
+				char chars[sbuf.in_avail()];
+				sbuf.sgetn(chars, sbuf.in_avail());
+				sbuf.str(std::string());
+
+				Document d;
+				d.ParseInsitu(chars);
+
+				// Check if JSON object is valid and continue with logic
+				if (d.IsObject()) {
+					// TODO find specific values and act on them
+					if (d.HasMember("stars") && d["stars"].IsInt()) {
+						std::cout << d["stars"].GetInt() << std::endl;
+					} else {
+						std::cout << "nostars" << std::endl;
+					}
+				} else {
+					std::cerr << "not an object!" << std::endl;
+				}
+			} else {
+				std::cerr << "Error occurred in TCP session " << error << std::endl;
 			}
+
 		});
 	}
 
-	void do_write(std::size_t length) {
+	void do_write() {
 		// TODO serialize JSONCommand to this socket
 		/*auto self(shared_from_this());
 		 boost::asio::async_write(socket_, boost::asio::buffer(data_, length), [this, self](boost::system::error_code ec, std::size_t length)
@@ -65,5 +96,6 @@ private:
 	};
 	char data_[buffer_size];
 	std::stringbuf sbuf;
+	IOutstation* pOutstation_;
 }
 ;
