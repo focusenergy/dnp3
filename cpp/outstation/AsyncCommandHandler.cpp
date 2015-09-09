@@ -17,7 +17,6 @@
 using namespace opendnp3;
 
 // TODO validate requests before returning CommandStatus
-
 AsyncCommandHandler::~AsyncCommandHandler() {
 }
 

@@ -19,8 +19,8 @@ using namespace asiodnp3;
 
 class OutstationJSONTCPServer {
 public:
-	OutstationJSONTCPServer(boost::asio::io_service& io_service, short port, IOutstation* pOutstation) :
-			pOutstation_ { pOutstation }, acceptor_(io_service, tcp::endpoint(tcp::v4(), port)), socket_(io_service) {
+	OutstationJSONTCPServer(boost::asio::io_service& io_service, short port, IOutstation* pOutstation, AsyncCommandHandler& handler) :
+			handler_(handler), pOutstation_ { pOutstation }, acceptor_(io_service, tcp::endpoint(tcp::v4(), port)), socket_(io_service) {
 		do_accept();
 	}
 
@@ -39,7 +39,7 @@ private:
 	}
 
 	IOutstation* pOutstation_;
-	AsyncCommandHandler handler_;
+	AsyncCommandHandler& handler_;
 	tcp::acceptor acceptor_;
 	tcp::socket socket_;
 };

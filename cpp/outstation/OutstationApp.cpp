@@ -50,16 +50,7 @@ void signal_handler(int signal_number) {
 
 class OutstationApp {
 public:
-	OutstationApp() {
-	}
-
-	~OutstationApp() {
-		std::cout << "ioservice stop()" << std::endl;
-		ioService_.stop();
-		std::cout << "ioservice stop() stopped" << std::endl;
-	}
-
-	void run() {
+	void start() {
 		DNP3Manager manager(1);
 		manager.AddLogSubscriber(&ConsoleLogger::Instance());
 
@@ -85,17 +76,14 @@ public:
 		// Configure and start outstation
 		ConfigureDatabase(pOutstation->GetConfigView());
 		pOutstation->Enable();
-		try {
-			OutstationJSONTCPServer s(ioService_, 3384, pOutstation);
-			ioService_.run();
-		} catch (std::exception& e) {
-			std::cerr << "Exception: " << e.what() << "\n";
-		}
-		pOutstation->Shutdown();
-		manager.Shutdown();
-		std::cout << "run() finished" << std::endl;
+
+		OutstationJSONTCPServer s(io_service_, 3384, pOutstation, handler);
+		io_service_.run();
 	}
 
+	void stop() {
+		io_service_.stop();
+	}
 private:
 	void ConfigureDatabase(DatabaseConfigView view) {
 		// TODO read from config file
@@ -104,21 +92,20 @@ private:
 		view.analogs[0].metadata.variation = EventAnalogVariation::Group32Var7;
 	}
 
-	boost::asio::io_service ioService_;
+	boost::asio::io_service io_service_;
 };
 
 int main(int argc, char* argv[]) {
 	std::signal(SIGINT, signal_handler);
 
 	OutstationApp app;
-	std::thread t([&app] {app.run();});
+	std::thread t([&app] {app.start();});
 	t.detach();
 
 	boost::unique_lock<boost::mutex> lock(g_signal_mutex);
 	while (!g_signal) {
 		g_signal_cond.wait(lock);
 	}
-
-	std::cout << "goodbye" << std::endl;
+	app.stop();
 	return 0;
 }
