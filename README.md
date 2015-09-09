@@ -20,6 +20,11 @@ ported to run on various microcontrollers.
 
 Langauge bindings are available. Consult the documentation.
 
+Ubuntu 14.04 Dependencies
+=========================
+```sudo apt-get install autoconf libtool cmake libasio-dev libboost-all-dev
+```
+
 Build Steps
 ===========
 ```bash
