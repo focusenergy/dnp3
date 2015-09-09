@@ -217,7 +217,7 @@ outstation_LDFLAGS = -pthread -lboost_system -lboost_thread
 outstation_LDADD = libopenpal.la libasiopal.la libopendnp3.la libasiodnp3.la
 outstation_SOURCES = \
 cpp/outstation/AsyncCommandHandler.cpp \
-cpp/outstation/Main.cpp
+cpp/outstation/OutstationApp.cpp
 
 check_PROGRAMS = openpaltest dnp3test
 #TESTS = openpaltest dnp3test
