@@ -35,6 +35,68 @@ public:
 	}
 
 	void write(AsyncCommand command) {
+		StringBuffer json_sb = toJSONStringBuffer(command);
+		std::string json_sb_size_str = std::to_string(json_sb.GetSize());
+
+		std::stringbuf data_sbuf(json_sb_size_str);
+		data_sbuf.pubseekoff(0, std::ios_base::end, std::ios_base::out);
+		data_sbuf.sputn(json_sb.GetString(), json_sb.GetSize());
+
+		data_sbuf.pubseekpos(0);
+		char data_char[data_sbuf.in_avail()];
+		data_sbuf.pubseekpos(0);
+		data_sbuf.sgetn(data_char, data_sbuf.in_avail());
+		data_sbuf.pubseekpos(0);
+
+		auto self(shared_from_this());
+		boost::asio::async_write(socket_, boost::asio::buffer(data_char, data_sbuf.in_avail()),
+				[this, self](boost::system::error_code ec, std::size_t length) {
+					// TODO handle errors
+				});
+	}
+
+private:
+	void read() {
+		auto self(shared_from_this());
+		socket_.async_receive(boost::asio::buffer(data_, buffer_size), [this, self](boost::system::error_code error, std::size_t length)
+		{
+			if (!error)
+			{
+				data_sbuf_.sputn(data_,length);
+				// TODO check if JSON object finished, reset data_sbuf_
+				read();
+			} else if (error.value() == boost::system::errc::no_such_file_or_directory) {
+				// Convert stringbuf to char[] and reset
+				data_sbuf_.pubseekpos(0);
+				char chars[data_sbuf_.in_avail()];
+				data_sbuf_.sgetn(chars, data_sbuf_.in_avail());
+				data_sbuf_.str(std::string());
+
+				Document d;
+				d.ParseInsitu(chars);
+
+				// TODO create MeasUpdate and apply to pOutstation_, threading issues?
+				// Check if JSON object is valid and continue with logic
+				if (d.IsObject()) {
+					// TODO find specific values and act on them
+					if (d.HasMember("stars") && d["stars"].IsInt()) {
+						std::cout << d["stars"].GetInt() << std::endl;
+					} else {
+						std::cout << "nostars" << std::endl;
+					}
+				} else {
+					std::cerr << "not an object!" << std::endl;
+				}
+			} else {
+				std::cerr << "Error occurred in TCP session " << error << std::endl;
+			}
+		});
+	}
+
+	/**
+	 * Takes input AsyncCommand and serializes JSON object to resulting StringBuffer
+	 */
+	StringBuffer toJSONStringBuffer(AsyncCommand command) {
 		StringBuffer sb;
 		Writer<StringBuffer> writer(sb);
 		writer.StartObject();
@@ -80,52 +142,7 @@ public:
 			//TODO exception handle!
 		}
 		writer.EndObject();
-		std::cout << sb.GetString() << std::endl;
-
-		//TODO write to socket
-
-		/*auto self(shared_from_this());
-		 boost::asio::async_write(socket_, boost::asio::buffer(sb., length), [this, self](boost::system::error_code ec, std::size_t length)
-		 {
-		 });*/
-	}
-
-private:
-	void read() {
-		auto self(shared_from_this());
-		socket_.async_receive(boost::asio::buffer(data_, buffer_size), [this, self](boost::system::error_code error, std::size_t length)
-		{
-			if (!error)
-			{
-				data_sbuf_.sputn(data_,length);
-				read();
-			} else if (error.value() == boost::system::errc::no_such_file_or_directory) {
-				// Convert stringbuf to char[] and reset
-				data_sbuf_.pubseekpos(0);
-				char chars[data_sbuf_.in_avail()];
-				data_sbuf_.sgetn(chars, data_sbuf_.in_avail());
-				data_sbuf_.str(std::string());
-
-				Document d;
-				d.ParseInsitu(chars);
-
-				// TODO create MeasUpdate and apply to pOutstation_, threading issues?
-				// Check if JSON object is valid and continue with logic
-				if (d.IsObject()) {
-					// TODO find specific values and act on them
-					if (d.HasMember("stars") && d["stars"].IsInt()) {
-						std::cout << d["stars"].GetInt() << std::endl;
-					} else {
-						std::cout << "nostars" << std::endl;
-					}
-				} else {
-					std::cerr << "not an object!" << std::endl;
-				}
-			} else {
-				std::cerr << "Error occurred in TCP session " << error << std::endl;
-			}
-
-		});
+		return sb;
 	}
 
 	enum {
