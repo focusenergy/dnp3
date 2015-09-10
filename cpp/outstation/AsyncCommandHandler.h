@@ -15,7 +15,11 @@
 #define OPENDNP3_ASYNCCOMMANDHANDLER_H
 
 #include <opendnp3/outstation/ICommandHandler.h>
-#include <boost/lockfree/queue.hpp>
+
+#include<condition_variable>
+#include<mutex>
+#include<queue>
+
 #include "AsyncCommand.cpp"
 
 using namespace opendnp3;
@@ -42,8 +46,11 @@ public:
 	AsyncCommand pop();
 
 private:
-	bool push(AsyncCommand command);
-	boost::lockfree::queue<AsyncCommand*> queue_{32};
+	void push(AsyncCommand command);
+
+	std::queue<AsyncCommand*> queue_;
+	std::mutex queue_mutex_;
+	std::condition_variable queue_cond_;
 };
 
 #endif
