@@ -16,49 +16,49 @@ using namespace opendnp3;
 
 class AsyncCommand {
 public:
-	AsyncCommand() :
-			idx_(0) {
-	}
+	/*	AsyncCommand() :
+	 idx_(0), crob_(NULL), aoInt16_(NULL), aoInt32_(NULL), aoFloat32_(NULL), aoDouble64_(NULL) {
+	 }*/
 	AsyncCommand(ControlRelayOutputBlock crob, uint16_t idx) :
-			crob_(crob), idx_(idx) {
+			idx_(idx), crob_(&crob), aoInt16_(NULL), aoInt32_(NULL), aoFloat32_(NULL), aoDouble64_(NULL) {
 	}
 	AsyncCommand(AnalogOutputInt16 aoInt16, uint16_t idx) :
-			aoInt16_(aoInt16), idx_(idx) {
+			idx_(idx), crob_(NULL), aoInt16_(&aoInt16), aoInt32_(NULL), aoFloat32_(NULL), aoDouble64_(NULL) {
 	}
 	AsyncCommand(AnalogOutputInt32 aoInt32, uint16_t idx) :
-			aoInt32_(aoInt32), idx_(idx) {
+			idx_(idx), crob_(NULL), aoInt16_(NULL), aoInt32_(&aoInt32), aoFloat32_(NULL), aoDouble64_(NULL) {
 	}
 	AsyncCommand(AnalogOutputFloat32 aoFloat32, uint16_t idx) :
-			aoFloat32_(aoFloat32), idx_(idx) {
+			idx_(idx), crob_(NULL), aoInt16_(NULL), aoInt32_(NULL), aoFloat32_(&aoFloat32), aoDouble64_(NULL) {
 	}
 	AsyncCommand(AnalogOutputDouble64 aoDouble64, uint16_t idx) :
-			aoDouble64_(aoDouble64), idx_(idx) {
+			idx_(idx), crob_(NULL), aoInt16_(NULL), aoInt32_(NULL), aoFloat32_(NULL), aoDouble64_(&aoDouble64) {
 	}
 
-	uint16_t Index() {
+	uint16_t Idx() {
 		return idx_;
 	}
-	ControlRelayOutputBlock CROB() {
+	ControlRelayOutputBlock* CROB() {
 		return crob_;
 	}
-	AnalogOutputInt16 AOInt16() {
+	AnalogOutputInt16* AOInt16() {
 		return aoInt16_;
 	}
-	AnalogOutputInt32 AOInt32() {
+	AnalogOutputInt32* AOInt32() {
 		return aoInt32_;
 	}
-	AnalogOutputFloat32 AOFloat32() {
+	AnalogOutputFloat32* AOFloat32() {
 		return aoFloat32_;
 	}
-	AnalogOutputDouble64 AODouble64() {
+	AnalogOutputDouble64* AODouble64() {
 		return aoDouble64_;
 	}
 
 private:
 	uint16_t idx_;
-	ControlRelayOutputBlock crob_;
-	AnalogOutputInt16 aoInt16_;
-	AnalogOutputInt32 aoInt32_;
-	AnalogOutputFloat32 aoFloat32_;
-	AnalogOutputDouble64 aoDouble64_;
+	ControlRelayOutputBlock* crob_;
+	AnalogOutputInt16* aoInt16_;
+	AnalogOutputInt32* aoInt32_;
+	AnalogOutputFloat32* aoFloat32_;
+	AnalogOutputDouble64* aoDouble64_;
 };

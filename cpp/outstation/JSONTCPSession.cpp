@@ -13,12 +13,7 @@
  */
 
 #include <boost/asio.hpp>
-#include <boost/thread/thread.hpp>
-#include <stdio.h>
-#include <execinfo.h>
-#include <signal.h>
 #include <stdlib.h>
-#include <unistd.h>
 
 #include <rapidjson/document.h>
 #include <rapidjson/writer.h>
@@ -36,30 +31,85 @@ public:
 	}
 
 	void start() {
-		do_read();
+		read();
+	}
+
+	void write(AsyncCommand command) {
+		StringBuffer sb;
+		Writer<StringBuffer> writer(sb);
+		writer.StartObject();
+		writer.String("index");
+		writer.Int(command.Idx());
+		if (command.AOInt16() != NULL) {
+			writer.String("type");
+			writer.String("AnalogInt16");
+			writer.String("value");
+			writer.Int(command.AOInt16()->value);
+			writer.String("status");
+			writer.Int(static_cast<uint16_t>(command.AOInt16()->status));
+		} else if (command.AOInt32() != NULL) {
+			writer.String("type");
+			writer.String("AnalogInt32");
+			writer.String("value");
+			writer.Int(command.AOInt32()->value);
+			writer.String("status");
+			writer.Int(static_cast<uint16_t>(command.AOInt32()->status));
+		} else if (command.AOFloat32() != NULL) {
+			writer.String("type");
+			writer.String("AnalogFloat32");
+			writer.String("value");
+			writer.Double(command.AOFloat32()->value);
+			writer.String("status");
+			writer.Int(static_cast<uint16_t>(command.AOFloat32()->status));
+		} else if (command.AODouble64() != NULL) {
+			writer.String("type");
+			writer.String("AnalogDouble64");
+			writer.String("value");
+			writer.Double(command.AODouble64()->value);
+			writer.String("status");
+			writer.Int(static_cast<uint16_t>(command.AODouble64()->status));
+		} else if (command.CROB() != NULL) {
+			// TODO handle all CROB attributes
+			writer.String("type");
+			writer.String("ControlRelayOutputBlock");
+			writer.String("value");
+			writer.Int(static_cast<uint16_t>(command.CROB()->functionCode));
+			writer.String("status");
+			writer.Int(static_cast<uint16_t>(command.CROB()->status));
+		} else {
+			//TODO exception handle!
+		}
+		writer.EndObject();
+		std::cout << sb.GetString() << std::endl;
+
+		//TODO write to socket
+
+		/*auto self(shared_from_this());
+		 boost::asio::async_write(socket_, boost::asio::buffer(sb., length), [this, self](boost::system::error_code ec, std::size_t length)
+		 {
+		 });*/
 	}
 
 private:
-	void do_read() {
+	void read() {
 		auto self(shared_from_this());
-		std::cout << "nope!" << this << std::endl;
-		std::cout << "yep8" << &socket_ << std::endl;
-		socket_.async_receive(boost::asio::buffer(data_, 1024), [this, self](boost::system::error_code error, std::size_t length)
+		socket_.async_receive(boost::asio::buffer(data_, buffer_size), [this, self](boost::system::error_code error, std::size_t length)
 		{
 			if (!error)
 			{
-				sbuf.sputn(data_,length);
-				do_read();
+				data_sbuf_.sputn(data_,length);
+				read();
 			} else if (error.value() == boost::system::errc::no_such_file_or_directory) {
 				// Convert stringbuf to char[] and reset
-				sbuf.pubseekpos(0);
-				char chars[sbuf.in_avail()];
-				sbuf.sgetn(chars, sbuf.in_avail());
-				sbuf.str(std::string());
+				data_sbuf_.pubseekpos(0);
+				char chars[data_sbuf_.in_avail()];
+				data_sbuf_.sgetn(chars, data_sbuf_.in_avail());
+				data_sbuf_.str(std::string());
 
 				Document d;
 				d.ParseInsitu(chars);
 
+				// TODO create MeasUpdate and apply to pOutstation_, threading issues?
 				// Check if JSON object is valid and continue with logic
 				if (d.IsObject()) {
 					// TODO find specific values and act on them
@@ -78,24 +128,12 @@ private:
 		});
 	}
 
-	void do_write() {
-		// TODO serialize JSONCommand to this socket
-		/*auto self(shared_from_this());
-		 boost::asio::async_write(socket_, boost::asio::buffer(data_, length), [this, self](boost::system::error_code ec, std::size_t length)
-		 {
-		 if (!ec)
-		 {
-		 do_read();
-		 }
-		 });*/
-	}
-
-	tcp::socket socket_;
 	enum {
 		buffer_size = 1024
 	};
 	char data_[buffer_size];
-	std::stringbuf sbuf;
+	std::stringbuf data_sbuf_;
+	tcp::socket socket_;
 	IOutstation* pOutstation_;
 }
 ;

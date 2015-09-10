@@ -12,6 +12,8 @@
  * limitations under the License.
  */
 
+#include <iostream>
+
 #include "AsyncCommandHandler.h"
 
 using namespace opendnp3;
@@ -60,12 +62,23 @@ CommandStatus AsyncCommandHandler::Operate(const AnalogOutputDouble64& command, 
 	return CommandStatus::SUCCESS;
 }
 
+/**
+ * Blocks on queue until one or more AsyncCommand elements are available.
+ * Assumes only one subscriber.
+ */
 AsyncCommand AsyncCommandHandler::pop() {
-	AsyncCommand* command = NULL;
-	queue_.pop(command);
+	std::unique_lock<std::mutex> lock(queue_mutex_);
+	while (queue_.empty()) {
+		queue_cond_.wait(lock);
+	}
+	AsyncCommand* command = queue_.front();
+	queue_.pop();
 	return *command;
 }
 
-bool AsyncCommandHandler::push(AsyncCommand command) {
-	return queue_.push(&command);
+void AsyncCommandHandler::push(AsyncCommand command) {
+	std::unique_lock<std::mutex> lock(queue_mutex_);
+	queue_.push(&command);
+	lock.unlock();
+	queue_cond_.notify_one();
 }

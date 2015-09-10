@@ -13,6 +13,8 @@
  */
 
 #include <set>
+#include <thread>
+
 #include "JSONTCPSession.cpp"
 
 using namespace asiodnp3;
@@ -21,25 +23,47 @@ class OutstationJSONTCPServer {
 public:
 	OutstationJSONTCPServer(boost::asio::io_service& io_service, short port, IOutstation* pOutstation, AsyncCommandHandler& handler) :
 			handler_(handler), pOutstation_ { pOutstation }, acceptor_(io_service, tcp::endpoint(tcp::v4(), port)), socket_(io_service) {
-		do_accept();
+		start();
 	}
 
 private:
-	void do_accept() {
+	void start() {
+		// TODO shutdown thread correctly on SIGINT
+		std::thread t([this] {subscribe();});
+		t.detach();
+		accept();
+	}
+
+	void subscribe() {
+		while (true) {
+			AsyncCommand command = handler_.pop();
+			for (std::shared_ptr<JSONTCPSession> session : sessions_) {
+				// TODO remove old sessions
+				std::cout << session << " | " << session.use_count() << std::endl;
+				session.get()->write(command);
+			}
+		}
+	}
+
+	void accept() {
 		acceptor_.async_accept(socket_, [this](boost::system::error_code error)
 		{
 			if (!error)
 			{
-				std::make_shared<JSONTCPSession>(std::move(socket_), pOutstation_)->start();
+				std::shared_ptr<JSONTCPSession> pSession = std::make_shared<JSONTCPSession>(std::move(socket_), pOutstation_);
+				sessions_.insert(pSession);
+				pSession->start();
 			} else {
 				std::cerr << "Unable to create TCP Session " << error << std::endl;
 			}
-			do_accept();
+			accept();
 		});
 	}
 
 	IOutstation* pOutstation_;
 	AsyncCommandHandler& handler_;
+	std::set<std::shared_ptr<JSONTCPSession>> sessions_;
+
 	tcp::acceptor acceptor_;
 	tcp::socket socket_;
 };
