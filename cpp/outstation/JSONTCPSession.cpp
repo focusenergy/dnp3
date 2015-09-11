@@ -12,18 +12,23 @@
  * limitations under the License.
  */
 
+#include <asiodnp3/MeasUpdate.h>
 #include <boost/asio.hpp>
-#include <stdlib.h>
-
 #include <rapidjson/document.h>
 #include <rapidjson/writer.h>
 #include <rapidjson/stringbuffer.h>
+
+#include <stdlib.h>
 
 using boost::asio::ip::tcp;
 
 using namespace asiodnp3;
 using namespace rapidjson;
 
+/**
+ * JSONTCPSession reads/writes JSON objects to socket that represent outstation commands.
+ * Protocol is as follows: [int64_t size][size bytes of JSON]
+ */
 class JSONTCPSession: public std::enable_shared_from_this<JSONTCPSession> {
 public:
 	JSONTCPSession(tcp::socket socket, IOutstation* pOutstation) :
@@ -35,58 +40,55 @@ public:
 	}
 
 	void write(AsyncCommand command) {
-		StringBuffer json_sb = toJSONStringBuffer(command);
-		std::string json_sb_size_str = std::to_string(json_sb.GetSize());
+		StringBuffer out_json_sb = toJSONStringBuffer(command);
 
-		std::stringbuf data_sbuf(json_sb_size_str);
-		data_sbuf.pubseekoff(0, std::ios_base::end, std::ios_base::out);
-		data_sbuf.sputn(json_sb.GetString(), json_sb.GetSize());
+		// Get JSON string length, convert size to int64_t and write in character stream
+		int64_t json_size = out_json_sb.GetSize();
 
-		data_sbuf.pubseekpos(0);
-		char data_char[data_sbuf.in_avail()];
-		data_sbuf.pubseekpos(0);
-		data_sbuf.sgetn(data_char, data_sbuf.in_avail());
-		data_sbuf.pubseekpos(0);
+		// Concat raw json_size bytes and JSON bytes
+		char out_data[sizeof(int64_t) + out_json_sb.GetSize()];
+		memcpy(out_data, &json_size, sizeof(int64_t));
+		memcpy(out_data + sizeof(int64_t), out_json_sb.GetString(), out_json_sb.GetSize());
 
+		// Write data to socket
 		auto self(shared_from_this());
-		boost::asio::async_write(socket_, boost::asio::buffer(data_char, data_sbuf.in_avail()),
-				[this, self](boost::system::error_code ec, std::size_t length) {
-					// TODO handle errors
-				});
+		boost::asio::async_write(socket_, boost::asio::buffer(out_data, sizeof(out_data)), [this, self](boost::system::error_code ec, std::size_t length) {
+			// TODO handle errors
+			});
 	}
 
 private:
+	/**
+	 * Reads incoming JSON preceded by int64_t with number of bytes to read.
+	 * TODO needs better error handling and array bound checking
+	 */
 	void read() {
 		auto self(shared_from_this());
-		socket_.async_receive(boost::asio::buffer(data_, buffer_size), [this, self](boost::system::error_code error, std::size_t length)
+		socket_.async_receive(boost::asio::buffer(buf_, buf_sz_), [this, self](boost::system::error_code error, std::size_t length)
 		{
 			if (!error)
 			{
-				data_sbuf_.sputn(data_,length);
-				// TODO check if JSON object finished, reset data_sbuf_
+				// Initialize for new JSON object in stream
+				if (data_pos_ == 0) {
+					if (length < sizeof(int64_t)) {
+						// TODO throw exception, bad things happening
+					}
+					// Initialize data_sz_
+					memcpy(&data_sz_, buf_, sizeof(int64_t));
+					// Initialize data, copy first buffer's worth of char[]
+					data_ = new char[data_sz_];
+					memcpy(&data_ + sizeof(int64_t), buf_, length - sizeof(int64_t));
+					data_pos_ = length - sizeof(int64_t);
+				} else if(data_pos_ < data_sz_) {
+
+				}
+				if (data_pos_ == data_sz_) {
+					//instantiate MeasUpdate and apply
+					applyUpdate(data_);
+				}
 				read();
 			} else if (error.value() == boost::system::errc::no_such_file_or_directory) {
-				// Convert stringbuf to char[] and reset
-				data_sbuf_.pubseekpos(0);
-				char chars[data_sbuf_.in_avail()];
-				data_sbuf_.sgetn(chars, data_sbuf_.in_avail());
-				data_sbuf_.str(std::string());
-
-				Document d;
-				d.ParseInsitu(chars);
-
-				// TODO create MeasUpdate and apply to pOutstation_, threading issues?
-				// Check if JSON object is valid and continue with logic
-				if (d.IsObject()) {
-					// TODO find specific values and act on them
-					if (d.HasMember("stars") && d["stars"].IsInt()) {
-						std::cout << d["stars"].GetInt() << std::endl;
-					} else {
-						std::cout << "nostars" << std::endl;
-					}
-				} else {
-					std::cerr << "not an object!" << std::endl;
-				}
+				// Socket is closed
 			} else {
 				std::cerr << "Error occurred in TCP session " << error << std::endl;
 			}
@@ -145,11 +147,33 @@ private:
 		return sb;
 	}
 
+	/**
+	 * Takes a char[] JSON object and de-serializes to a new MeasUpdate which is applied against pOustation_
+	 */
+	void applyUpdate(char* pchar_json_data) {
+		Document d;
+		d.ParseInsitu(pchar_json_data);
+		if (d.IsObject()) {
+			MeasUpdate update(pOutstation_);
+			if (d.HasMember("stars") && d["stars"].IsInt()) {
+				std::cout << d["stars"].GetInt() << std::endl;
+			} else {
+				std::cout << "nostars" << std::endl;
+			}
+		} else {
+			std::cerr << "not an object!" << std::endl;
+		}
+	}
+
 	enum {
-		buffer_size = 1024
+		buf_sz_ = 1024
 	};
-	char data_[buffer_size];
-	std::stringbuf data_sbuf_;
+	char buf_[buf_sz_];
+
+	char* data_ = new char;
+	int64_t data_pos_ = 0;
+	int64_t data_sz_ = 0;
+
 	tcp::socket socket_;
 	IOutstation* pOutstation_;
 }
