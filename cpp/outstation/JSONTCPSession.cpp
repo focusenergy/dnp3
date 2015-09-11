@@ -68,21 +68,25 @@ private:
 		{
 			if (!error)
 			{
+				std::cout << "buf:" << buf_ << std::endl;
+				std::cout << "1 pos:" << data_pos_ << " sz:" << data_sz_ << std::endl;
 				// Initialize for new JSON object in stream
 				if (data_pos_ == 0) {
-					if (length < sizeof(int64_t)) {
-						// TODO throw exception, bad things happening
-					}
 					// Initialize data_sz_
-					memcpy(&data_sz_, buf_, sizeof(int64_t));
+					memcpy(&data_sz_, &buf_, sizeof(int64_t));
 					// Initialize data, copy first buffer's worth of char[]
 					data_ = new char[data_sz_];
-					memcpy(&data_ + sizeof(int64_t), buf_, length - sizeof(int64_t));
 					data_pos_ = length - sizeof(int64_t);
-				} else if(data_pos_ < data_sz_) {
+					memcpy(data_, &buf_+ sizeof(int64_t), data_pos_);
 
+					std::cout << "2 pos:" << data_pos_ << " sz:" << data_sz_ << std::endl;
+				} else if(data_pos_ < data_sz_) {
+					std::cout << "3 pos:" << data_pos_ << " sz:" << data_sz_ << std::endl;
+					memcpy(&data_ + data_pos_, buf_, length);
 				}
+				std::cout << "4 pos:" << data_pos_ << " sz:" << data_sz_ << std::endl;
 				if (data_pos_ == data_sz_) {
+					std::cout << "yep3" << std::endl;
 					//instantiate MeasUpdate and apply
 					applyUpdate(data_);
 				}
@@ -151,6 +155,7 @@ private:
 	 * Takes a char[] JSON object and de-serializes to a new MeasUpdate which is applied against pOustation_
 	 */
 	void applyUpdate(char* pchar_json_data) {
+		std::cout << "applying update" << pchar_json_data << std::endl;
 		Document d;
 		d.ParseInsitu(pchar_json_data);
 		if (d.IsObject()) {
