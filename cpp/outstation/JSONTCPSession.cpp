@@ -60,35 +60,34 @@ public:
 private:
 	/**
 	 * Reads incoming JSON preceded by int64_t with number of bytes to read.
-	 * TODO needs better error handling and array bound checking
 	 */
 	void read() {
 		auto self(shared_from_this());
-		socket_.async_receive(boost::asio::buffer(buf_, buf_sz_), [this, self](boost::system::error_code error, std::size_t length)
+		socket_.async_receive(boost::asio::buffer(buf_, buf_sz_), [this, self](boost::system::error_code error, size_t length)
 		{
 			if (!error)
 			{
-				std::cout << "buf:" << buf_ << std::endl;
-				std::cout << "1 pos:" << data_pos_ << " sz:" << data_sz_ << std::endl;
 				// Initialize for new JSON object in stream
 				if (data_pos_ == 0) {
 					// Initialize data_sz_
 					memcpy(&data_sz_, &buf_, sizeof(int64_t));
-					// Initialize data, copy first buffer's worth of char[]
+
+					// Initialize data, copy first buffer's worth of chars
 					data_ = new char[data_sz_];
 					data_pos_ = length - sizeof(int64_t);
-					memcpy(data_, &buf_+ sizeof(int64_t), data_pos_);
-
-					std::cout << "2 pos:" << data_pos_ << " sz:" << data_sz_ << std::endl;
+					memcpy(data_, &buf_[sizeof(int64_t)], data_pos_);
 				} else if(data_pos_ < data_sz_) {
-					std::cout << "3 pos:" << data_pos_ << " sz:" << data_sz_ << std::endl;
-					memcpy(&data_ + data_pos_, buf_, length);
+					// copy next buffer's worth of chars
+					memcpy(data_ + data_pos_, buf_, length);
+					data_pos_ += length;
 				}
-				std::cout << "4 pos:" << data_pos_ << " sz:" << data_sz_ << std::endl;
+				// if all chars have been transferred, process JSON object
 				if (data_pos_ == data_sz_) {
-					std::cout << "yep3" << std::endl;
-					//instantiate MeasUpdate and apply
+					// apply update from JSON chars, deallocate memory and reset pointers
 					applyUpdate(data_);
+					delete[] data_;
+					data_pos_ = 0;
+					data_sz_ = 0;
 				}
 				read();
 			} else if (error.value() == boost::system::errc::no_such_file_or_directory) {
@@ -155,31 +154,37 @@ private:
 	 * Takes a char[] JSON object and de-serializes to a new MeasUpdate which is applied against pOustation_
 	 */
 	void applyUpdate(char* pchar_json_data) {
-		std::cout << "applying update" << pchar_json_data << std::endl;
+		std::cout << "applying update: " << pchar_json_data << std::endl;
 		Document d;
 		d.ParseInsitu(pchar_json_data);
 		if (d.IsObject()) {
 			MeasUpdate update(pOutstation_);
-			if (d.HasMember("stars") && d["stars"].IsInt()) {
-				std::cout << d["stars"].GetInt() << std::endl;
-			} else {
-				std::cout << "nostars" << std::endl;
-			}
+			if (d.HasMember("type") && d["type"].IsString() && d.HasMember("index") && d["index"].IsInt()) {
+				std::cout << d["type"].GetString() << std::endl;
+				/* TODO FIX ME
+				 * char* type = d["type"].GetString();
+				if (type == "AnalogInt16") {
+					if (d.HasMember("value") && d["value"].IsInt()) {
+					update.Update(Analog(d["value"].GetInt()), d["index"].GetInt());
+				}}*/
 		} else {
-			std::cerr << "not an object!" << std::endl;
+			std::cout << "no type" << std::endl;
 		}
+	} else {
+		std::cerr << "not an object!" << std::endl;
 	}
+}
 
-	enum {
-		buf_sz_ = 1024
-	};
-	char buf_[buf_sz_];
+enum {
+	buf_sz_ = 1024
+};
+char buf_[buf_sz_];
 
-	char* data_ = new char;
-	int64_t data_pos_ = 0;
-	int64_t data_sz_ = 0;
+char* data_ = NULL;
+size_t data_pos_ = 0;
+int64_t data_sz_ = 0;
 
-	tcp::socket socket_;
-	IOutstation* pOutstation_;
+tcp::socket socket_;
+IOutstation* pOutstation_;
 }
 ;
