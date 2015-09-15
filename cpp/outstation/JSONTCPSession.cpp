@@ -57,6 +57,10 @@ public:
 			});
 	}
 
+	bool is_active() {
+		return socket_.is_open();
+	}
+
 private:
 	// Type constants (AsyncCommand)
 	static constexpr const char* AI16 = "AnalogInt16";
@@ -74,10 +78,10 @@ private:
 	 * Reads incoming JSON preceded by int64_t with number of bytes to read.
 	 */
 	void read() {
+		// TODO add buffer size vs data size validation and error handling
 		auto self(shared_from_this());
 		socket_.async_receive(boost::asio::buffer(buf_, buf_sz), [this, self](boost::system::error_code error, size_t length)
 		{
-
 			if (!error)
 			{
 				size_t buf_pos = 0;
@@ -116,7 +120,9 @@ private:
 				}
 				read();
 			} else if (error.value() == boost::system::errc::no_such_file_or_directory) {
-				/** Socket is closed */
+				/** read() returned EOF, shutdown entire socket **/
+				socket_.shutdown(socket_.shutdown_both);
+				socket_.close();
 			} else {
 				std::cerr << "Error occurred in TCP session " << error << std::endl;
 			}
@@ -179,7 +185,6 @@ private:
 	 * Takes a char[] JSON object and de-serializes to a new MeasUpdate which is applied against pOustation_
 	 */
 	void applyUpdate(char* pchar_json_data) {
-		std::cout << "applying update: " << pchar_json_data << std::endl;
 		Document d;
 		d.ParseInsitu(pchar_json_data);
 		if (d.IsObject()) {
