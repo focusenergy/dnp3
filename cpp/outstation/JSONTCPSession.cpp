@@ -58,40 +58,65 @@ public:
 	}
 
 private:
+	// Type constants (AsyncCommand)
+	static constexpr const char* AI16 = "AnalogInt16";
+	static constexpr const char* AI32 = "AnalogInt32";
+	static constexpr const char* AF32 = "AnalogFloat32";
+	static constexpr const char* AD64 = "AnalogDouble64";
+	static constexpr const char* CROB = "ControlRelayOutputBlock";
+
+	static constexpr const char* BIN = "Binary";
+	static constexpr const char* DBBIN = "DoubleBitBinary";
+	static constexpr const char* CI32 = "CounterInt32";
+	static constexpr const char* FCI32 = "FrozenCounterInt32";
+
 	/**
 	 * Reads incoming JSON preceded by int64_t with number of bytes to read.
 	 */
 	void read() {
 		auto self(shared_from_this());
-		socket_.async_receive(boost::asio::buffer(buf_, buf_sz_), [this, self](boost::system::error_code error, size_t length)
+		socket_.async_receive(boost::asio::buffer(buf_, buf_sz), [this, self](boost::system::error_code error, size_t length)
 		{
+
 			if (!error)
 			{
-				// Initialize for new JSON object in stream
-				if (data_pos_ == 0) {
-					// Initialize data_sz_
-					memcpy(&data_sz_, &buf_, sizeof(int64_t));
+				size_t buf_pos = 0;
+				while (buf_pos < length) {
+					size_t buf_rem = length - buf_pos;
+					if (data_pos_ == 0) {
+						/** initialize data size*/
+						memcpy(&data_sz_, &buf_[buf_pos], sizeof(int64_t));
+						buf_pos += sizeof(int64_t);
+						buf_rem -= sizeof(int64_t);
 
-					// Initialize data, copy first buffer's worth of chars
-					data_ = new char[data_sz_];
-					data_pos_ = length - sizeof(int64_t);
-					memcpy(data_, &buf_[sizeof(int64_t)], data_pos_);
-				} else if(data_pos_ < data_sz_) {
-					// copy next buffer's worth of chars
-					memcpy(data_ + data_pos_, buf_, length);
-					data_pos_ += length;
-				}
-				// if all chars have been transferred, process JSON object
-				if (data_pos_ == data_sz_) {
-					// apply update from JSON chars, deallocate memory and reset pointers
-					applyUpdate(data_);
-					delete[] data_;
-					data_pos_ = 0;
-					data_sz_ = 0;
+						/** initialize data array */
+						data_ = new char[data_sz_+1];
+						data_[data_sz_] = '\0';
+
+						/** copy data from buffer (max(data_sz_,length)) */
+						size_t size = buf_rem > data_sz_ ? data_sz_: buf_rem;
+						memcpy(data_, &buf_[buf_pos], size);
+						data_pos_ = size;
+						buf_pos += size;
+					} else if(data_pos_ < data_sz_) {
+						/** copy data from buffer (max(data_rem,buf_rem)) */
+						size_t data_rem = data_sz_ - data_pos_;
+						size_t size = buf_rem > data_rem ? data_rem : buf_rem;
+						memcpy(data_ + data_pos_, &buf_[buf_pos], size);
+						buf_pos += size;
+					}
+					/** if data_sz has been transferred, process JSON object */
+					if (data_pos_ == data_sz_) {
+						/** apply update from JSON chars, deallocate memory and reset pointers */
+						applyUpdate(data_);
+						delete[] data_;
+						data_pos_ = 0;
+						data_sz_ = 0;
+					}
 				}
 				read();
 			} else if (error.value() == boost::system::errc::no_such_file_or_directory) {
-				// Socket is closed
+				/** Socket is closed */
 			} else {
 				std::cerr << "Error occurred in TCP session " << error << std::endl;
 			}
@@ -109,28 +134,28 @@ private:
 		writer.Int(command.Idx());
 		if (command.AOInt16() != NULL) {
 			writer.String("type");
-			writer.String("AnalogInt16");
+			writer.String(AI16);
 			writer.String("value");
 			writer.Int(command.AOInt16()->value);
 			writer.String("status");
 			writer.Int(static_cast<uint16_t>(command.AOInt16()->status));
 		} else if (command.AOInt32() != NULL) {
 			writer.String("type");
-			writer.String("AnalogInt32");
+			writer.String(AI32);
 			writer.String("value");
 			writer.Int(command.AOInt32()->value);
 			writer.String("status");
 			writer.Int(static_cast<uint16_t>(command.AOInt32()->status));
 		} else if (command.AOFloat32() != NULL) {
 			writer.String("type");
-			writer.String("AnalogFloat32");
+			writer.String(AF32);
 			writer.String("value");
 			writer.Double(command.AOFloat32()->value);
 			writer.String("status");
 			writer.Int(static_cast<uint16_t>(command.AOFloat32()->status));
 		} else if (command.AODouble64() != NULL) {
 			writer.String("type");
-			writer.String("AnalogDouble64");
+			writer.String(AD64);
 			writer.String("value");
 			writer.Double(command.AODouble64()->value);
 			writer.String("status");
@@ -138,13 +163,13 @@ private:
 		} else if (command.CROB() != NULL) {
 			// TODO handle all CROB attributes
 			writer.String("type");
-			writer.String("ControlRelayOutputBlock");
+			writer.String(CROB);
 			writer.String("value");
 			writer.Int(static_cast<uint16_t>(command.CROB()->functionCode));
 			writer.String("status");
 			writer.Int(static_cast<uint16_t>(command.CROB()->status));
 		} else {
-			//TODO exception handle!
+			std::cerr << "JSONTCPSession: command not recognized" << std::endl;
 		}
 		writer.EndObject();
 		return sb;
@@ -159,32 +184,46 @@ private:
 		d.ParseInsitu(pchar_json_data);
 		if (d.IsObject()) {
 			MeasUpdate update(pOutstation_);
-			if (d.HasMember("type") && d["type"].IsString() && d.HasMember("index") && d["index"].IsInt()) {
-				std::cout << d["type"].GetString() << std::endl;
-				/* TODO FIX ME
-				 * char* type = d["type"].GetString();
-				if (type == "AnalogInt16") {
-					if (d.HasMember("value") && d["value"].IsInt()) {
-					update.Update(Analog(d["value"].GetInt()), d["index"].GetInt());
-				}}*/
+			if (d.HasMember("type") && d["type"].IsString() && d.HasMember("index") && d["index"].IsInt() && d.HasMember("value")) {
+				const char* type = d["type"].GetString();
+				if (!strcmp(AD64, type)) {
+					if (d["value"].IsDouble()) {
+						update.Update(Analog(d["value"].GetDouble()), d["index"].GetInt());
+					}
+				} else if (!strcmp(BIN, type)) {
+					if (d["value"].IsBool()) {
+						update.Update(Binary(d["value"].GetBool()), d["index"].GetInt());
+					}
+				} else if (!strcmp(CI32, type)) {
+					if (d["value"].IsInt()) {
+						update.Update(Counter(d["value"].GetInt()), d["index"].GetInt());
+					}
+				} else if (!strcmp(FCI32, type)) {
+					if (d["value"].IsInt()) {
+						update.Update(FrozenCounter(d["value"].GetInt()), d["index"].GetInt());
+					}
+				} else {
+					std::cerr << "JSONTCPSession: type attribute[" << type << "]not recognized" << std::endl;
+				}
+			} else {
+				std::cerr << "JSONTCPSession: object missing type attribute" << std::endl;
+			}
 		} else {
-			std::cout << "no type" << std::endl;
+			std::cerr << "JSONTCPSession: not an object" << std::endl;
 		}
-	} else {
-		std::cerr << "not an object!" << std::endl;
 	}
-}
 
-enum {
-	buf_sz_ = 1024
-};
-char buf_[buf_sz_];
+	enum {
+		buf_sz = 1024
 
-char* data_ = NULL;
-size_t data_pos_ = 0;
-int64_t data_sz_ = 0;
+	};
+	char buf_[buf_sz];
 
-tcp::socket socket_;
-IOutstation* pOutstation_;
+	char* data_ = NULL;
+	size_t data_pos_ = 0;
+	int64_t data_sz_ = 0;
+
+	tcp::socket socket_;
+	IOutstation* pOutstation_;
 }
 ;
