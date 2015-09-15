@@ -37,10 +37,14 @@ private:
 	void subscribe() {
 		while (true) {
 			AsyncCommand command = handler_.pop();
-			for (std::shared_ptr<JSONTCPSession> session : sessions_) {
-				// TODO remove old sessions
-				std::cout << session << " | " << session.use_count() << std::endl;
-				session.get()->write(command);
+			std::set<std::shared_ptr<JSONTCPSession>>::iterator it;
+			for (it = sessions_.begin(); it != sessions_.end();) {
+				if (it->get()->is_active()) {
+					it->get()->write(command);
+					it++;
+				} else {
+					sessions_.erase(it++);
+				}
 			}
 		}
 	}
