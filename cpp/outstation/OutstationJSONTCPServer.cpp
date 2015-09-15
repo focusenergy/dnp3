@@ -19,6 +19,13 @@
 
 using namespace asiodnp3;
 
+/**
+ * OutstationJSONTCPServer handles TCP client sessions over which JSON is transferred.
+ *
+ * All client sessions are tracked for broadcast messages from the AsyncCommandHandler (i.e. Master server)
+ * Clients may send JSON commands which are converted to MeasUpdate by JSONTCPSession.
+ *
+ */
 class OutstationJSONTCPServer {
 public:
 	OutstationJSONTCPServer(boost::asio::io_service& io_service, short port, IOutstation* pOutstation, AsyncCommandHandler& handler) :

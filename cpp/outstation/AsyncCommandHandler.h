@@ -24,6 +24,10 @@
 
 using namespace opendnp3;
 
+/**
+ * Custom command handler for asynchronously receiving AsyncCommands
+ * through blocking queue operations on a separate thread.
+ */
 class AsyncCommandHandler: public ICommandHandler {
 public:
 	~AsyncCommandHandler() override final;

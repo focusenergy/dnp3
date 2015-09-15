@@ -64,7 +64,7 @@ CommandStatus AsyncCommandHandler::Operate(const AnalogOutputDouble64& command, 
 
 /**
  * Blocks on queue until one or more AsyncCommand elements are available.
- * Assumes only one subscriber.
+ * TODO Handle more than 1 subscriber
  */
 AsyncCommand AsyncCommandHandler::pop() {
 	std::unique_lock<std::mutex> lock(queue_mutex_);
