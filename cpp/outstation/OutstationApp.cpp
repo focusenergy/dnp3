@@ -37,6 +37,11 @@ void signal_handler(int signal_number) {
 	g_signal_cond.notify_all();
 }
 
+/**
+ * Outstation Application providing secondary control channel over TCP (JSON payload).
+ *
+ * See OutstationJSONTCPServer for details of secondary control channel.
+ */
 class OutstationApp {
 public:
 	void start() {

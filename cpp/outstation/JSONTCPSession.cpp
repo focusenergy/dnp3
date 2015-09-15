@@ -26,7 +26,7 @@ using namespace asiodnp3;
 using namespace rapidjson;
 
 /**
- * JSONTCPSession reads/writes JSON objects to socket that represent outstation commands.
+ * JSONTCPSession reads/writes JSON objects to socket that represent Outstation commands.
  * Protocol is as follows: [int64_t size][size bytes of JSON]
  */
 class JSONTCPSession: public std::enable_shared_from_this<JSONTCPSession> {
