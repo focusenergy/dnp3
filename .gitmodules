@@ -6,3 +6,7 @@
 	path = thirdparty/rapidjson
 	url = ../rapidjson
 	branch = develop
+[submodule "thirdparty/yaml-cpp"]
+	path = thirdparty/yaml-cpp
+	url = ../yaml-cpp
+	branch = develop
