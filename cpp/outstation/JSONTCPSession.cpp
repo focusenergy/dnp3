@@ -39,7 +39,7 @@ public:
 		read();
 	}
 
-	void write(AsyncCommand command) {
+	void write(AsyncCommand* command) {
 		StringBuffer out_json_sb = toJSONStringBuffer(command);
 
 		// Get JSON string length, convert size to int64_t and write in character stream
@@ -90,6 +90,10 @@ private:
 					if (data_pos_ == 0) {
 						/** initialize data size*/
 						memcpy(&data_sz_, &buf_[buf_pos], sizeof(int64_t));
+						if (data_sz_ < 0) {
+							/** TODO warn in log **/
+							data_sz_ = 0;
+						}
 						buf_pos += sizeof(int64_t);
 						buf_rem -= sizeof(int64_t);
 
@@ -98,11 +102,11 @@ private:
 						data_[data_sz_] = '\0';
 
 						/** copy data from buffer (max(data_sz_,length)) */
-						size_t size = buf_rem > data_sz_ ? data_sz_: buf_rem;
+						size_t size = buf_rem > (size_t) data_sz_ ? data_sz_: buf_rem;
 						memcpy(data_, &buf_[buf_pos], size);
 						data_pos_ = size;
 						buf_pos += size;
-					} else if(data_pos_ < data_sz_) {
+					} else if(data_pos_ < (size_t) data_sz_) {
 						/** copy data from buffer (max(data_rem,buf_rem)) */
 						size_t data_rem = data_sz_ - data_pos_;
 						size_t size = buf_rem > data_rem ? data_rem : buf_rem;
@@ -110,7 +114,7 @@ private:
 						buf_pos += size;
 					}
 					/** if data_sz has been transferred, process JSON object */
-					if (data_pos_ == data_sz_) {
+					if (data_pos_ == (size_t) data_sz_) {
 						/** apply update from JSON chars, deallocate memory and reset pointers */
 						applyUpdate(data_);
 						delete[] data_;
@@ -132,48 +136,48 @@ private:
 	/**
 	 * Takes input AsyncCommand and serializes JSON object to resulting StringBuffer
 	 */
-	StringBuffer toJSONStringBuffer(AsyncCommand command) {
+	StringBuffer toJSONStringBuffer(AsyncCommand* command) {
 		StringBuffer sb;
 		Writer<StringBuffer> writer(sb);
 		writer.StartObject();
 		writer.String("index");
-		writer.Int(command.Idx());
-		if (command.AOInt16() != NULL) {
+		writer.Int(command->Idx());
+		if (command->AOInt16() != NULL) {
 			writer.String("type");
 			writer.String(AI16);
 			writer.String("value");
-			writer.Int(command.AOInt16()->value);
+			writer.Int(command->AOInt16()->value);
 			writer.String("status");
-			writer.Int(static_cast<uint16_t>(command.AOInt16()->status));
-		} else if (command.AOInt32() != NULL) {
+			writer.Int(static_cast<uint16_t>(command->AOInt16()->status));
+		} else if (command->AOInt32() != NULL) {
 			writer.String("type");
 			writer.String(AI32);
 			writer.String("value");
-			writer.Int(command.AOInt32()->value);
+			writer.Int(command->AOInt32()->value);
 			writer.String("status");
-			writer.Int(static_cast<uint16_t>(command.AOInt32()->status));
-		} else if (command.AOFloat32() != NULL) {
+			writer.Int(static_cast<uint16_t>(command->AOInt32()->status));
+		} else if (command->AOFloat32() != NULL) {
 			writer.String("type");
 			writer.String(AF32);
 			writer.String("value");
-			writer.Double(command.AOFloat32()->value);
+			writer.Double(command->AOFloat32()->value);
 			writer.String("status");
-			writer.Int(static_cast<uint16_t>(command.AOFloat32()->status));
-		} else if (command.AODouble64() != NULL) {
+			writer.Int(static_cast<uint16_t>(command->AOFloat32()->status));
+		} else if (command->AODouble64() != NULL) {
 			writer.String("type");
 			writer.String(AD64);
 			writer.String("value");
-			writer.Double(command.AODouble64()->value);
+			writer.Double(command->AODouble64()->value);
 			writer.String("status");
-			writer.Int(static_cast<uint16_t>(command.AODouble64()->status));
-		} else if (command.CROB() != NULL) {
+			writer.Int(static_cast<uint16_t>(command->AODouble64()->status));
+		} else if (command->CROB() != NULL) {
 			// TODO handle all CROB attributes
 			writer.String("type");
 			writer.String(CROB);
 			writer.String("value");
-			writer.Int(static_cast<uint16_t>(command.CROB()->functionCode));
+			writer.Int(static_cast<uint16_t>(command->CROB()->functionCode));
 			writer.String("status");
-			writer.Int(static_cast<uint16_t>(command.CROB()->status));
+			writer.Int(static_cast<uint16_t>(command->CROB()->status));
 		} else {
 			std::cerr << "JSONTCPSession: command not recognized" << std::endl;
 		}

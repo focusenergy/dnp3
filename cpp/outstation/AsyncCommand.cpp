@@ -12,53 +12,57 @@
  * limitations under the License.
  */
 
+#include <stdlib.h>
+
 using namespace opendnp3;
 
 class AsyncCommand {
 public:
-	/*	AsyncCommand() :
-	 idx_(0), crob_(NULL), aoInt16_(NULL), aoInt32_(NULL), aoFloat32_(NULL), aoDouble64_(NULL) {
-	 }*/
-	AsyncCommand(ControlRelayOutputBlock crob, uint16_t idx) :
-			idx_(idx), crob_(&crob), aoInt16_(NULL), aoInt32_(NULL), aoFloat32_(NULL), aoDouble64_(NULL) {
+	AsyncCommand(const ControlRelayOutputBlock* crob, uint16_t idx) :
+			idx_(idx), crob_(crob), aoInt16_(), aoInt32_(), aoFloat32_(), aoDouble64_() {
 	}
-	AsyncCommand(AnalogOutputInt16 aoInt16, uint16_t idx) :
-			idx_(idx), crob_(NULL), aoInt16_(&aoInt16), aoInt32_(NULL), aoFloat32_(NULL), aoDouble64_(NULL) {
+	AsyncCommand(const AnalogOutputInt16* aoInt16, uint16_t idx) :
+			idx_(idx), crob_(), aoInt16_(aoInt16), aoInt32_(), aoFloat32_(), aoDouble64_() {
 	}
-	AsyncCommand(AnalogOutputInt32 aoInt32, uint16_t idx) :
-			idx_(idx), crob_(NULL), aoInt16_(NULL), aoInt32_(&aoInt32), aoFloat32_(NULL), aoDouble64_(NULL) {
+	AsyncCommand(const AnalogOutputInt32* aoInt32, uint16_t idx) :
+			idx_(idx), crob_(), aoInt16_(), aoInt32_(aoInt32), aoFloat32_(), aoDouble64_() {
 	}
-	AsyncCommand(AnalogOutputFloat32 aoFloat32, uint16_t idx) :
-			idx_(idx), crob_(NULL), aoInt16_(NULL), aoInt32_(NULL), aoFloat32_(&aoFloat32), aoDouble64_(NULL) {
+	AsyncCommand(const AnalogOutputFloat32* aoFloat32, uint16_t idx) :
+			idx_(idx), crob_(), aoInt16_(), aoInt32_(), aoFloat32_(aoFloat32), aoDouble64_() {
 	}
-	AsyncCommand(AnalogOutputDouble64 aoDouble64, uint16_t idx) :
-			idx_(idx), crob_(NULL), aoInt16_(NULL), aoInt32_(NULL), aoFloat32_(NULL), aoDouble64_(&aoDouble64) {
+	AsyncCommand(const AnalogOutputDouble64* aoDouble64, uint16_t idx) :
+			idx_(idx), crob_(), aoInt16_(), aoInt32_(), aoFloat32_(), aoDouble64_(aoDouble64) {
 	}
 
 	uint16_t Idx() {
 		return idx_;
 	}
-	ControlRelayOutputBlock* CROB() {
+	const ControlRelayOutputBlock* CROB() {
+		std::cout << "crob addr:" << crob_ << std::endl;
 		return crob_;
 	}
-	AnalogOutputInt16* AOInt16() {
+	const AnalogOutputInt16* AOInt16() {
+		std::cout << "aoi16 addr:" << aoInt16_ << std::endl;
 		return aoInt16_;
 	}
-	AnalogOutputInt32* AOInt32() {
+	const AnalogOutputInt32* AOInt32() {
+		std::cout << "aoi32 addr:" << aoInt32_ << std::endl;
 		return aoInt32_;
 	}
-	AnalogOutputFloat32* AOFloat32() {
+	const AnalogOutputFloat32* AOFloat32() {
+		std::cout << "aof32 addr:" << aoFloat32_ << std::endl;
 		return aoFloat32_;
 	}
-	AnalogOutputDouble64* AODouble64() {
+	const AnalogOutputDouble64* AODouble64() {
+		std::cout << "aod64 addr:" << aoDouble64_ << std::endl;
 		return aoDouble64_;
 	}
 
 private:
 	uint16_t idx_;
-	ControlRelayOutputBlock* crob_;
-	AnalogOutputInt16* aoInt16_;
-	AnalogOutputInt32* aoInt32_;
-	AnalogOutputFloat32* aoFloat32_;
-	AnalogOutputDouble64* aoDouble64_;
+	const ControlRelayOutputBlock* crob_;
+	const AnalogOutputInt16* aoInt16_;
+	const AnalogOutputInt32* aoInt32_;
+	const AnalogOutputFloat32* aoFloat32_;
+	const AnalogOutputDouble64* aoDouble64_;
 };

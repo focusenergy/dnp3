@@ -1,0 +1,8 @@
+[submodule "thirdparty/asio"]
+	path = thirdparty/asio
+	url = ../asio/
+	branch = develop
+[submodule "thirdparty/rapidjson"]
+	path = thirdparty/rapidjson
+	url = ../rapidjson/
+	branch = develop

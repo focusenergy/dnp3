@@ -47,11 +47,16 @@
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Build (GNU)">
+			<resource resourceType="PROJECT" workspacePath="/dnp3"/>
+		</configuration>
+	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
 		<buildTargets>
 			<target name="all" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>all</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -59,7 +64,7 @@
 			</target>
 			<target name="am--refresh" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>am--refresh</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -67,7 +72,7 @@
 			</target>
 			<target name="check" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>check</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -75,7 +80,7 @@
 			</target>
 			<target name="clean" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>clean</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -83,7 +88,7 @@
 			</target>
 			<target name="clean-cscope" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>clean-cscope</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -91,7 +96,7 @@
 			</target>
 			<target name="clean-libLTLIBRARIES" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>clean-libLTLIBRARIES</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -99,7 +104,7 @@
 			</target>
 			<target name="clean-libtool" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>clean-libtool</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -107,7 +112,7 @@
 			</target>
 			<target name="cpp/examples/master/masterdemo-DemoMain.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/examples/master/masterdemo-DemoMain.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -115,7 +120,7 @@
 			</target>
 			<target name="cpp/examples/master/masterdemo-DemoMain.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/examples/master/masterdemo-DemoMain.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -123,7 +128,7 @@
 			</target>
 			<target name="cpp/examples/outstation/outstationdemo-DemoMain.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/examples/outstation/outstationdemo-DemoMain.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -131,7 +136,7 @@
 			</target>
 			<target name="cpp/examples/outstation/outstationdemo-DemoMain.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/examples/outstation/outstationdemo-DemoMain.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -139,7 +144,7 @@
 			</target>
 			<target name="cpp/libs/asiodnp3/src/asiodnp3/impl/libasiodnp3_la-LinkLayerRouter.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiodnp3/src/asiodnp3/impl/libasiodnp3_la-LinkLayerRouter.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -147,7 +152,7 @@
 			</target>
 			<target name="cpp/libs/asiodnp3/src/asiodnp3/impl/libasiodnp3_la-PhysicalLayerMonitor.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiodnp3/src/asiodnp3/impl/libasiodnp3_la-PhysicalLayerMonitor.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -155,7 +160,7 @@
 			</target>
 			<target name="cpp/libs/asiodnp3/src/asiodnp3/impl/libasiodnp3_la-PhysicalLayerMonitorStates.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiodnp3/src/asiodnp3/impl/libasiodnp3_la-PhysicalLayerMonitorStates.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -163,7 +168,7 @@
 			</target>
 			<target name="cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-BlockingCommandCallback.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-BlockingCommandCallback.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -171,7 +176,7 @@
 			</target>
 			<target name="cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-ChangeSet.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-ChangeSet.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -179,7 +184,7 @@
 			</target>
 			<target name="cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-ChannelSet.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-ChannelSet.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -187,7 +192,7 @@
 			</target>
 			<target name="cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-ConsoleLogger.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-ConsoleLogger.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -195,7 +200,7 @@
 			</target>
 			<target name="cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-DefaultMasterApplication.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-DefaultMasterApplication.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -203,7 +208,7 @@
 			</target>
 			<target name="cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-DestructorHook.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-DestructorHook.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -211,7 +216,7 @@
 			</target>
 			<target name="cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-DNP3Channel.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-DNP3Channel.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -219,7 +224,7 @@
 			</target>
 			<target name="cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-DNP3Manager.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-DNP3Manager.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -227,7 +232,7 @@
 			</target>
 			<target name="cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-HeaderTypes.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-HeaderTypes.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -235,7 +240,7 @@
 			</target>
 			<target name="cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-MasterStackImpl.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-MasterStackImpl.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -243,7 +248,7 @@
 			</target>
 			<target name="cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-MeasUpdate.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-MeasUpdate.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -251,7 +256,7 @@
 			</target>
 			<target name="cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-MultidropTaskLock.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-MultidropTaskLock.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -259,7 +264,7 @@
 			</target>
 			<target name="cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-OutstationStackImpl.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-OutstationStackImpl.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -267,7 +272,7 @@
 			</target>
 			<target name="cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-PrintingSOEHandler.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-PrintingSOEHandler.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -275,7 +280,7 @@
 			</target>
 			<target name="cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-StackActionHandler.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiodnp3/src/asiodnp3/libasiodnp3_la-StackActionHandler.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -283,7 +288,7 @@
 			</target>
 			<target name="cpp/libs/asiopal/src/asiopal/libasiopal_la-ASIOExecutor.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiopal/src/asiopal/libasiopal_la-ASIOExecutor.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -291,7 +296,7 @@
 			</target>
 			<target name="cpp/libs/asiopal/src/asiopal/libasiopal_la-ASIOSerialHelpers.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiopal/src/asiopal/libasiopal_la-ASIOSerialHelpers.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -299,7 +304,7 @@
 			</target>
 			<target name="cpp/libs/asiopal/src/asiopal/libasiopal_la-IOServiceThreadPool.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiopal/src/asiopal/libasiopal_la-IOServiceThreadPool.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -307,7 +312,7 @@
 			</target>
 			<target name="cpp/libs/asiopal/src/asiopal/libasiopal_la-LogFanoutHandler.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiopal/src/asiopal/libasiopal_la-LogFanoutHandler.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -315,7 +320,7 @@
 			</target>
 			<target name="cpp/libs/asiopal/src/asiopal/libasiopal_la-PhysicalLayerBase.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiopal/src/asiopal/libasiopal_la-PhysicalLayerBase.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -323,7 +328,7 @@
 			</target>
 			<target name="cpp/libs/asiopal/src/asiopal/libasiopal_la-PhysicalLayerBaseTCP.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiopal/src/asiopal/libasiopal_la-PhysicalLayerBaseTCP.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -331,7 +336,7 @@
 			</target>
 			<target name="cpp/libs/asiopal/src/asiopal/libasiopal_la-PhysicalLayerSerial.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiopal/src/asiopal/libasiopal_la-PhysicalLayerSerial.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -339,7 +344,7 @@
 			</target>
 			<target name="cpp/libs/asiopal/src/asiopal/libasiopal_la-PhysicalLayerTCPClient.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiopal/src/asiopal/libasiopal_la-PhysicalLayerTCPClient.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -347,7 +352,7 @@
 			</target>
 			<target name="cpp/libs/asiopal/src/asiopal/libasiopal_la-PhysicalLayerTCPServer.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiopal/src/asiopal/libasiopal_la-PhysicalLayerTCPServer.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -355,7 +360,7 @@
 			</target>
 			<target name="cpp/libs/asiopal/src/asiopal/libasiopal_la-SerialTypes.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiopal/src/asiopal/libasiopal_la-SerialTypes.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -363,7 +368,7 @@
 			</target>
 			<target name="cpp/libs/asiopal/src/asiopal/libasiopal_la-TimerASIO.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiopal/src/asiopal/libasiopal_la-TimerASIO.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -371,7 +376,7 @@
 			</target>
 			<target name="cpp/libs/asiopal/src/asiopal/libasiopal_la-UTCTimeSource.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/asiopal/src/asiopal/libasiopal_la-UTCTimeSource.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -379,7 +384,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-AnalogCommandEvent.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-AnalogCommandEvent.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -387,7 +392,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-AnalogOutput.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-AnalogOutput.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -395,7 +400,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-APDUBuilders.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-APDUBuilders.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -403,7 +408,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-APDUHandlerBase.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-APDUHandlerBase.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -411,7 +416,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-APDUHeader.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-APDUHeader.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -419,7 +424,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-APDUHeaderParser.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-APDUHeaderParser.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -427,7 +432,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-APDULogging.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-APDULogging.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -435,7 +440,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-APDUParser.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-APDUParser.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -443,7 +448,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-APDURequest.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-APDURequest.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -451,7 +456,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-APDUResponse.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-APDUResponse.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -459,7 +464,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-APDUWrapper.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-APDUWrapper.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -467,7 +472,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-AppControlField.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-AppControlField.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -475,7 +480,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-BinaryCommandEvent.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-BinaryCommandEvent.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -483,7 +488,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-BitReader.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-BitReader.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -491,7 +496,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-ClassField.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-ClassField.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -499,7 +504,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-ControlRelayOutputBlock.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-ControlRelayOutputBlock.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -507,7 +512,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-EventTriggers.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-EventTriggers.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -515,7 +520,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-FunctionHelpers.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-FunctionHelpers.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -523,7 +528,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-GroupVariationRecord.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-GroupVariationRecord.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -531,7 +536,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-IINField.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-IINField.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -539,7 +544,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-MeasurementTypes.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-MeasurementTypes.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -547,7 +552,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-ObjectWriter.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-ObjectWriter.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -555,7 +560,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-OctetData.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-OctetData.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -563,7 +568,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-TimeAndInterval.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/app/libopendnp3_la-TimeAndInterval.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -571,7 +576,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-ChannelState.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-ChannelState.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -579,7 +584,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-CommandStatus.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-CommandStatus.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -587,7 +592,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-ControlCode.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-ControlCode.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -595,7 +600,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-DoubleBit.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-DoubleBit.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -603,7 +608,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-FunctionCode.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-FunctionCode.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -611,7 +616,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-GroupVariation.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-GroupVariation.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -619,7 +624,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-IntervalUnits.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-IntervalUnits.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -627,7 +632,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-LinkFunction.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-LinkFunction.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -635,7 +640,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-PointClass.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-PointClass.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -643,7 +648,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-QualifierCode.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-QualifierCode.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -651,7 +656,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-TaskCompletion.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-TaskCompletion.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -659,7 +664,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-TimeSyncMode.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/gen/libopendnp3_la-TimeSyncMode.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -667,7 +672,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/link/libopendnp3_la-CRC.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/link/libopendnp3_la-CRC.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -675,7 +680,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/link/libopendnp3_la-IOpenDelayStrategy.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/link/libopendnp3_la-IOpenDelayStrategy.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -683,7 +688,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/link/libopendnp3_la-LinkFrame.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/link/libopendnp3_la-LinkFrame.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -691,7 +696,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/link/libopendnp3_la-LinkHeader.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/link/libopendnp3_la-LinkHeader.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -699,7 +704,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/link/libopendnp3_la-LinkLayer.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/link/libopendnp3_la-LinkLayer.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -707,7 +712,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/link/libopendnp3_la-LinkLayerParser.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/link/libopendnp3_la-LinkLayerParser.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -715,7 +720,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/link/libopendnp3_la-PriLinkLayerStates.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/link/libopendnp3_la-PriLinkLayerStates.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -723,7 +728,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/link/libopendnp3_la-SecLinkLayerStates.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/link/libopendnp3_la-SecLinkLayerStates.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -731,7 +736,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/link/libopendnp3_la-ShiftableBuffer.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/link/libopendnp3_la-ShiftableBuffer.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -739,7 +744,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-AssignClassTask.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-AssignClassTask.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -747,7 +752,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-ClearRestartTask.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-ClearRestartTask.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -755,7 +760,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-CommandMarshaller.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-CommandMarshaller.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -763,7 +768,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-CommandResponse.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-CommandResponse.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -771,7 +776,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-CommandTask.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-CommandTask.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -779,7 +784,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-DisableUnsolicitedTask.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-DisableUnsolicitedTask.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -787,7 +792,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-EnableUnsolicitedTask.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-EnableUnsolicitedTask.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -795,7 +800,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-EventScanTask.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-EventScanTask.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -803,7 +808,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-IMasterState.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-IMasterState.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -811,7 +816,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-IMasterTask.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-IMasterTask.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -819,7 +824,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-ISOEHandler.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-ISOEHandler.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -827,7 +832,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-ITaskLock.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-ITaskLock.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -835,7 +840,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-Master.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-Master.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -843,7 +848,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-MasterContext.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-MasterContext.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -851,7 +856,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-MasterParams.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-MasterParams.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -859,7 +864,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-MasterScan.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-MasterScan.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -867,7 +872,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-MasterScheduler.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-MasterScheduler.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -875,7 +880,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-MasterTasks.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-MasterTasks.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -883,7 +888,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-MeasurementHandler.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-MeasurementHandler.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -891,7 +896,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-PollTaskBase.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-PollTaskBase.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -899,7 +904,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-SerialTimeSyncTask.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-SerialTimeSyncTask.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -907,7 +912,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-StartupIntegrityPoll.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-StartupIntegrityPoll.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -915,7 +920,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-UserPollTask.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-UserPollTask.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -923,7 +928,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-WriteTask.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/master/libopendnp3_la-WriteTask.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -931,7 +936,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group1.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group1.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -939,7 +944,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group10.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group10.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -947,7 +952,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group11.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group11.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -955,7 +960,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group12.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group12.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -963,7 +968,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group13.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group13.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -971,7 +976,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group2.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group2.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -979,7 +984,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group20.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group20.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -987,7 +992,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group21.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group21.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -995,7 +1000,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group22.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group22.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1003,7 +1008,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group23.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group23.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1011,7 +1016,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group3.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group3.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1019,7 +1024,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group30.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group30.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1027,7 +1032,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group32.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group32.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1035,7 +1040,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group4.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group4.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1043,7 +1048,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group40.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group40.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1051,7 +1056,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group41.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group41.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1059,7 +1064,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group42.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group42.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1067,7 +1072,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group43.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group43.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1075,7 +1080,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group50.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group50.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1083,7 +1088,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group51.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group51.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1091,7 +1096,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group52.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/objects/libopendnp3_la-Group52.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1099,7 +1104,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-ApplicationIIN.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-ApplicationIIN.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1107,7 +1112,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-AssignClassHandler.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-AssignClassHandler.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1115,7 +1120,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-ClassBasedRequestHandler.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-ClassBasedRequestHandler.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1123,7 +1128,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-CommandActionAdapter.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-CommandActionAdapter.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1131,7 +1136,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-CommandResponseHandler.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-CommandResponseHandler.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1139,7 +1144,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-Database.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-Database.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1147,7 +1152,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-DatabaseBuffers.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-DatabaseBuffers.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1155,7 +1160,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-DatabaseConfigView.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-DatabaseConfigView.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1163,7 +1168,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-EventBuffer.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-EventBuffer.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1171,7 +1176,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-EventBufferConfig.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-EventBufferConfig.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1179,7 +1184,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-EventCount.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-EventCount.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1187,7 +1192,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-EventWriter.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-EventWriter.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1195,7 +1200,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-IINHelpers.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-IINHelpers.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1203,7 +1208,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-IOutstationApplication.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-IOutstationApplication.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1211,7 +1216,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-Outstation.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-Outstation.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1219,7 +1224,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-OutstationContext.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-OutstationContext.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1227,7 +1232,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-OutstationParams.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-OutstationParams.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1235,7 +1240,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-OutstationSolicitedStates.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-OutstationSolicitedStates.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1243,7 +1248,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-OutstationUnsolicitedStates.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-OutstationUnsolicitedStates.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1251,7 +1256,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-ReadHandler.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-ReadHandler.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1259,7 +1264,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-ResponseContext.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-ResponseContext.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1267,7 +1272,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-SelectedRanges.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-SelectedRanges.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1275,7 +1280,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-SimpleCommandHandler.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-SimpleCommandHandler.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1283,7 +1288,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-SOERecord.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-SOERecord.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1291,7 +1296,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-StaticBuffers.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-StaticBuffers.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1299,7 +1304,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-StaticLoadFunctions.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-StaticLoadFunctions.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1307,7 +1312,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-WriteHandler.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/outstation/libopendnp3_la-WriteHandler.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1315,7 +1320,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/transport/libopendnp3_la-TransportLayer.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/transport/libopendnp3_la-TransportLayer.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1323,7 +1328,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/transport/libopendnp3_la-TransportRx.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/transport/libopendnp3_la-TransportRx.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1331,7 +1336,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/transport/libopendnp3_la-TransportStack.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/transport/libopendnp3_la-TransportStack.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1339,7 +1344,7 @@
 			</target>
 			<target name="cpp/libs/opendnp3/src/opendnp3/transport/libopendnp3_la-TransportTx.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/opendnp3/src/opendnp3/transport/libopendnp3_la-TransportTx.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1347,7 +1352,7 @@
 			</target>
 			<target name="cpp/libs/openpal/src/openpal/container/libopenpal_la-DynamicBuffer.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/openpal/src/openpal/container/libopenpal_la-DynamicBuffer.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1355,7 +1360,7 @@
 			</target>
 			<target name="cpp/libs/openpal/src/openpal/container/libopenpal_la-ReadBufferView.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/openpal/src/openpal/container/libopenpal_la-ReadBufferView.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1363,7 +1368,7 @@
 			</target>
 			<target name="cpp/libs/openpal/src/openpal/container/libopenpal_la-WriteBufferView.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/openpal/src/openpal/container/libopenpal_la-WriteBufferView.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1371,7 +1376,7 @@
 			</target>
 			<target name="cpp/libs/openpal/src/openpal/executor/libopenpal_la-Action0.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/openpal/src/openpal/executor/libopenpal_la-Action0.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1379,7 +1384,7 @@
 			</target>
 			<target name="cpp/libs/openpal/src/openpal/executor/libopenpal_la-Erasure.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/openpal/src/openpal/executor/libopenpal_la-Erasure.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1387,7 +1392,7 @@
 			</target>
 			<target name="cpp/libs/openpal/src/openpal/executor/libopenpal_la-MonotonicTimestamp.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/openpal/src/openpal/executor/libopenpal_la-MonotonicTimestamp.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1395,7 +1400,7 @@
 			</target>
 			<target name="cpp/libs/openpal/src/openpal/executor/libopenpal_la-TimeDuration.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/openpal/src/openpal/executor/libopenpal_la-TimeDuration.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1403,7 +1408,7 @@
 			</target>
 			<target name="cpp/libs/openpal/src/openpal/logging/libopenpal_la-LogEntry.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/openpal/src/openpal/logging/libopenpal_la-LogEntry.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1411,7 +1416,7 @@
 			</target>
 			<target name="cpp/libs/openpal/src/openpal/logging/libopenpal_la-Logger.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/openpal/src/openpal/logging/libopenpal_la-Logger.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1419,7 +1424,7 @@
 			</target>
 			<target name="cpp/libs/openpal/src/openpal/logging/libopenpal_la-LogRoot.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/openpal/src/openpal/logging/libopenpal_la-LogRoot.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1427,7 +1432,7 @@
 			</target>
 			<target name="cpp/libs/openpal/src/openpal/logging/libopenpal_la-StringFormatting.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/openpal/src/openpal/logging/libopenpal_la-StringFormatting.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1435,7 +1440,7 @@
 			</target>
 			<target name="cpp/libs/openpal/src/openpal/serialization/libopenpal_la-ByteSerialization.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/openpal/src/openpal/serialization/libopenpal_la-ByteSerialization.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1443,7 +1448,7 @@
 			</target>
 			<target name="cpp/libs/openpal/src/openpal/serialization/libopenpal_la-UInt48LE.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/openpal/src/openpal/serialization/libopenpal_la-UInt48LE.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1451,7 +1456,7 @@
 			</target>
 			<target name="cpp/libs/openpal/src/openpal/util/libopenpal_la-Limits.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/openpal/src/openpal/util/libopenpal_la-Limits.lo</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1459,15 +1464,47 @@
 			</target>
 			<target name="cpp/libs/openpal/src/openpal/util/libopenpal_la-ToHex.lo" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/libs/openpal/src/openpal/util/libopenpal_la-ToHex.lo</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>false</runAllBuilders>
+			</target>
+			<target name="cpp/outstation/outstation-AsyncCommandHandler.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>make</buildCommand>
+				<buildArguments>-j6</buildArguments>
+				<buildTarget>cpp/outstation/outstation-AsyncCommandHandler.o</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>false</runAllBuilders>
+			</target>
+			<target name="cpp/outstation/outstation-AsyncCommandHandler.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>make</buildCommand>
+				<buildArguments>-j6</buildArguments>
+				<buildTarget>cpp/outstation/outstation-AsyncCommandHandler.obj</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>false</runAllBuilders>
+			</target>
+			<target name="cpp/outstation/outstation-OutstationApp.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>make</buildCommand>
+				<buildArguments>-j6</buildArguments>
+				<buildTarget>cpp/outstation/outstation-OutstationApp.o</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>false</runAllBuilders>
+			</target>
+			<target name="cpp/outstation/outstation-OutstationApp.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>make</buildCommand>
+				<buildArguments>-j6</buildArguments>
+				<buildTarget>cpp/outstation/outstation-OutstationApp.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
 				<runAllBuilders>false</runAllBuilders>
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-APDUHelpers.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-APDUHelpers.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1475,7 +1512,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-APDUHelpers.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-APDUHelpers.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1483,7 +1520,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-APDUHexBuilders.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-APDUHexBuilders.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1491,7 +1528,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-APDUHexBuilders.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-APDUHexBuilders.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1499,7 +1536,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-BufferHelpers.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-BufferHelpers.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1507,7 +1544,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-BufferHelpers.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-BufferHelpers.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1515,7 +1552,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-BufferTestObject.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-BufferTestObject.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1523,7 +1560,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-BufferTestObject.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-BufferTestObject.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1531,7 +1568,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-CatchTestStart.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-CatchTestStart.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1539,7 +1576,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-CatchTestStart.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-CatchTestStart.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1547,7 +1584,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-CopyableBuffer.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-CopyableBuffer.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1555,7 +1592,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-CopyableBuffer.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-CopyableBuffer.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1563,7 +1600,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-DNPHelpers.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-DNPHelpers.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1571,7 +1608,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-DNPHelpers.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-DNPHelpers.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1579,7 +1616,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-HexConversions.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-HexConversions.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1587,7 +1624,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-HexConversions.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-HexConversions.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1595,7 +1632,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-LinkLayerRouterTest.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-LinkLayerRouterTest.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1603,7 +1640,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-LinkLayerRouterTest.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-LinkLayerRouterTest.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1611,7 +1648,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-LinkLayerTest.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-LinkLayerTest.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1619,7 +1656,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-LinkLayerTest.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-LinkLayerTest.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1627,7 +1664,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-LogTester.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-LogTester.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1635,7 +1672,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-LogTester.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-LogTester.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1643,7 +1680,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-LoopbackPhysicalLayer.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-LoopbackPhysicalLayer.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1651,7 +1688,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-LoopbackPhysicalLayer.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-LoopbackPhysicalLayer.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1659,7 +1696,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-LowerLayerToPhysAdapter.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-LowerLayerToPhysAdapter.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1667,7 +1704,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-LowerLayerToPhysAdapter.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-LowerLayerToPhysAdapter.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1675,7 +1712,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-MasterTestObject.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-MasterTestObject.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1683,7 +1720,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-MasterTestObject.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-MasterTestObject.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1691,7 +1728,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-MockExecutor.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-MockExecutor.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1699,7 +1736,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-MockExecutor.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-MockExecutor.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1707,7 +1744,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-MockFrameSink.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-MockFrameSink.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1715,7 +1752,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-MockFrameSink.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-MockFrameSink.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1723,7 +1760,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-MockLowerLayer.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-MockLowerLayer.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1731,7 +1768,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-MockLowerLayer.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-MockLowerLayer.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1739,7 +1776,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-MockPhysicalLayer.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-MockPhysicalLayer.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1747,7 +1784,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-MockPhysicalLayer.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-MockPhysicalLayer.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1755,7 +1792,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-MockPhysicalLayerMonitor.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-MockPhysicalLayerMonitor.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1763,7 +1800,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-MockPhysicalLayerMonitor.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-MockPhysicalLayerMonitor.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1771,7 +1808,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-MockTransportLayer.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-MockTransportLayer.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1779,7 +1816,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-MockTransportLayer.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-MockTransportLayer.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1787,7 +1824,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-MockUpperLayer.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-MockUpperLayer.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1795,7 +1832,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-MockUpperLayer.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-MockUpperLayer.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1803,7 +1840,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-OutstationTestObject.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-OutstationTestObject.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1811,7 +1848,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-OutstationTestObject.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-OutstationTestObject.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1819,7 +1856,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-PhysBaseTest.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-PhysBaseTest.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1827,7 +1864,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-PhysBaseTest.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-PhysBaseTest.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1835,7 +1872,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-PhysLoopback.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-PhysLoopback.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1843,7 +1880,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-PhysLoopback.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-PhysLoopback.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1851,7 +1888,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-PhysTestObject.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-PhysTestObject.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1859,7 +1896,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-PhysTestObject.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-PhysTestObject.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1867,7 +1904,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-ProtocolUtil.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-ProtocolUtil.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1875,7 +1912,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-ProtocolUtil.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-ProtocolUtil.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1883,7 +1920,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-RandomizedBuffer.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-RandomizedBuffer.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1891,7 +1928,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-RandomizedBuffer.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-RandomizedBuffer.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1899,7 +1936,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-SerialTestObject.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-SerialTestObject.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1907,7 +1944,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-SerialTestObject.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-SerialTestObject.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1915,7 +1952,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-StopWatch.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-StopWatch.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1923,7 +1960,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-StopWatch.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-StopWatch.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1931,7 +1968,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestAPDUParsing.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestAPDUParsing.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1939,7 +1976,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestAPDUParsing.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestAPDUParsing.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1947,7 +1984,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestAPDUWriting.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestAPDUWriting.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1955,7 +1992,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestAPDUWriting.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestAPDUWriting.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1963,7 +2000,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestASIO.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestASIO.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1971,7 +2008,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestASIO.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestASIO.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1979,7 +2016,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestASIOThreadPool.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestASIOThreadPool.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1987,7 +2024,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestASIOThreadPool.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestASIOThreadPool.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -1995,7 +2032,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestCastLongLongDouble.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestCastLongLongDouble.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2003,7 +2040,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestCastLongLongDouble.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestCastLongLongDouble.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2011,7 +2048,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestCRC.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestCRC.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2019,7 +2056,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestCRC.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestCRC.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2027,7 +2064,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestDatabase.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestDatabase.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2035,7 +2072,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestDatabase.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestDatabase.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2043,7 +2080,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestDNP3Manager.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestDNP3Manager.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2051,7 +2088,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestDNP3Manager.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestDNP3Manager.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2059,7 +2096,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestIndexSearch.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestIndexSearch.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2067,7 +2104,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestIndexSearch.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestIndexSearch.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2075,7 +2112,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestLazyCollection.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestLazyCollection.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2083,7 +2120,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestLazyCollection.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestLazyCollection.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2091,7 +2128,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestLinkFrame.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestLinkFrame.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2099,7 +2136,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestLinkFrame.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestLinkFrame.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2107,7 +2144,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestLinkLayer.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestLinkLayer.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2115,7 +2152,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestLinkLayer.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestLinkLayer.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2123,7 +2160,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestLinkLayerRouter.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestLinkLayerRouter.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2131,7 +2168,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestLinkLayerRouter.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestLinkLayerRouter.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2139,7 +2176,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestLinkReceiver.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestLinkReceiver.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2147,7 +2184,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestLinkReceiver.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestLinkReceiver.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2155,7 +2192,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestLinkRoute.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestLinkRoute.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2163,7 +2200,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestLinkRoute.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestLinkRoute.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2171,7 +2208,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestLog.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestLog.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2179,7 +2216,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestLog.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestLog.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2187,7 +2224,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestMaster.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestMaster.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2195,7 +2232,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestMaster.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestMaster.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2203,7 +2240,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestMasterAssignClass.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestMasterAssignClass.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2211,7 +2248,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestMasterAssignClass.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestMasterAssignClass.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2219,7 +2256,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestMasterCommandRequests.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestMasterCommandRequests.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2227,7 +2264,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestMasterCommandRequests.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestMasterCommandRequests.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2235,7 +2272,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestMasterMultidrop.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestMasterMultidrop.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2243,7 +2280,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestMasterMultidrop.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestMasterMultidrop.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2251,7 +2288,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestMasterUnsolBehaviors.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestMasterUnsolBehaviors.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2259,7 +2296,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestMasterUnsolBehaviors.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestMasterUnsolBehaviors.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2267,7 +2304,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestObject.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestObject.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2275,7 +2312,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestObject.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestObject.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2283,7 +2320,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestObjectASIO.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestObjectASIO.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2291,7 +2328,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestObjectASIO.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestObjectASIO.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2299,7 +2336,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestOutstation.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestOutstation.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2307,7 +2344,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestOutstation.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestOutstation.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2315,7 +2352,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestOutstationAssignClass.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestOutstationAssignClass.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2323,7 +2360,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestOutstationAssignClass.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestOutstationAssignClass.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2331,7 +2368,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestOutstationCommandResponses.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestOutstationCommandResponses.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2339,7 +2376,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestOutstationCommandResponses.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestOutstationCommandResponses.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2347,7 +2384,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestOutstationEventResponses.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestOutstationEventResponses.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2355,7 +2392,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestOutstationEventResponses.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestOutstationEventResponses.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2363,7 +2400,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestOutstationUnsolicitedResponses.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestOutstationUnsolicitedResponses.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2371,7 +2408,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestOutstationUnsolicitedResponses.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestOutstationUnsolicitedResponses.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2379,7 +2416,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestPhysicalLayerAsyncBase.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestPhysicalLayerAsyncBase.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2387,7 +2424,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestPhysicalLayerAsyncBase.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestPhysicalLayerAsyncBase.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2395,7 +2432,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestPhysicalLayerAsyncSerial.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestPhysicalLayerAsyncSerial.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2403,7 +2440,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestPhysicalLayerAsyncSerial.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestPhysicalLayerAsyncSerial.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2411,7 +2448,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestPhysicalLayerAsyncTCP.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestPhysicalLayerAsyncTCP.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2419,7 +2456,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestPhysicalLayerAsyncTCP.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestPhysicalLayerAsyncTCP.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2427,7 +2464,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestPhysicalLayerLoopback.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestPhysicalLayerLoopback.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2435,7 +2472,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestPhysicalLayerLoopback.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestPhysicalLayerLoopback.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2443,7 +2480,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestPhysicalLayerMonitor.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestPhysicalLayerMonitor.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2451,7 +2488,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestPhysicalLayerMonitor.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestPhysicalLayerMonitor.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2459,7 +2496,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestSerialization.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestSerialization.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2467,7 +2504,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestSerialization.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestSerialization.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2475,7 +2512,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestShiftableBuffer.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestShiftableBuffer.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2483,7 +2520,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestShiftableBuffer.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestShiftableBuffer.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2491,7 +2528,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestTime.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestTime.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2499,7 +2536,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestTime.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestTime.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2507,7 +2544,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestTimers.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestTimers.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2515,7 +2552,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestTimers.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestTimers.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2523,7 +2560,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestTransportLayer.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestTransportLayer.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2531,7 +2568,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestTransportLayer.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestTransportLayer.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2539,7 +2576,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestTransportLoopback.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestTransportLoopback.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2547,7 +2584,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestTransportLoopback.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestTransportLoopback.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2555,7 +2592,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestTypes.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestTypes.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2563,7 +2600,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestTypes.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestTypes.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2571,7 +2608,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestUtil.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestUtil.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2579,7 +2616,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestUtil.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestUtil.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2587,7 +2624,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestWriteConversions.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestWriteConversions.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2595,7 +2632,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TestWriteConversions.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TestWriteConversions.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2603,7 +2640,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-Timeout.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-Timeout.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2611,7 +2648,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-Timeout.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-Timeout.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2619,7 +2656,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TransportIntegrationStack.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TransportIntegrationStack.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2627,7 +2664,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TransportIntegrationStack.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TransportIntegrationStack.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2635,7 +2672,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TransportLoopbackTestObject.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TransportLoopbackTestObject.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2643,7 +2680,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TransportLoopbackTestObject.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TransportLoopbackTestObject.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2651,7 +2688,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TransportScalabilityTestObject.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TransportScalabilityTestObject.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2659,7 +2696,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TransportScalabilityTestObject.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TransportScalabilityTestObject.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2667,7 +2704,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TransportStackPair.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TransportStackPair.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2675,7 +2712,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TransportStackPair.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TransportStackPair.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2683,7 +2720,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TransportTestObject.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TransportTestObject.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2691,7 +2728,7 @@
 			</target>
 			<target name="cpp/tests/opendnp3tests/src/dnp3test-TransportTestObject.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/opendnp3tests/src/dnp3test-TransportTestObject.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2699,7 +2736,7 @@
 			</target>
 			<target name="cpp/tests/openpaltests/src/openpaltest-CatchTestStart.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/openpaltests/src/openpaltest-CatchTestStart.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2707,7 +2744,7 @@
 			</target>
 			<target name="cpp/tests/openpaltests/src/openpaltest-CatchTestStart.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/openpaltests/src/openpaltest-CatchTestStart.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2715,7 +2752,7 @@
 			</target>
 			<target name="cpp/tests/openpaltests/src/openpaltest-FunctionalTestSuite.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/openpaltests/src/openpaltest-FunctionalTestSuite.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2723,7 +2760,7 @@
 			</target>
 			<target name="cpp/tests/openpaltests/src/openpaltest-FunctionalTestSuite.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/openpaltests/src/openpaltest-FunctionalTestSuite.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2731,7 +2768,7 @@
 			</target>
 			<target name="cpp/tests/openpaltests/src/openpaltest-LinkedListTestSuite.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/openpaltests/src/openpaltest-LinkedListTestSuite.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2739,7 +2776,7 @@
 			</target>
 			<target name="cpp/tests/openpaltests/src/openpaltest-LinkedListTestSuite.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/openpaltests/src/openpaltest-LinkedListTestSuite.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2747,7 +2784,7 @@
 			</target>
 			<target name="cpp/tests/openpaltests/src/openpaltest-ManagedPointerTestSuite.o" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/openpaltests/src/openpaltest-ManagedPointerTestSuite.o</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2755,7 +2792,7 @@
 			</target>
 			<target name="cpp/tests/openpaltests/src/openpaltest-ManagedPointerTestSuite.obj" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cpp/tests/openpaltests/src/openpaltest-ManagedPointerTestSuite.obj</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2763,7 +2800,7 @@
 			</target>
 			<target name="cscope" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cscope</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2771,7 +2808,7 @@
 			</target>
 			<target name="cscope.files" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cscope.files</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2779,7 +2816,7 @@
 			</target>
 			<target name="cscopelist" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>cscopelist</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2787,7 +2824,7 @@
 			</target>
 			<target name="ctags" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>ctags</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2795,7 +2832,7 @@
 			</target>
 			<target name="dist" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>dist</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2803,7 +2840,7 @@
 			</target>
 			<target name="dist-all" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>dist-all</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2811,7 +2848,7 @@
 			</target>
 			<target name="dist-bzip2" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>dist-bzip2</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2819,7 +2856,7 @@
 			</target>
 			<target name="dist-gzip" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>dist-gzip</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2827,7 +2864,7 @@
 			</target>
 			<target name="dist-lzip" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>dist-lzip</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2835,7 +2872,7 @@
 			</target>
 			<target name="dist-shar" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>dist-shar</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2843,7 +2880,7 @@
 			</target>
 			<target name="dist-tarZ" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>dist-tarZ</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2851,7 +2888,7 @@
 			</target>
 			<target name="dist-xz" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>dist-xz</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2859,7 +2896,7 @@
 			</target>
 			<target name="dist-zip" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>dist-zip</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2867,7 +2904,7 @@
 			</target>
 			<target name="distcheck" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>distcheck</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2875,7 +2912,7 @@
 			</target>
 			<target name="distclean" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>distclean</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2883,7 +2920,7 @@
 			</target>
 			<target name="distclean-compile" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>distclean-compile</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2891,7 +2928,7 @@
 			</target>
 			<target name="distclean-libtool" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>distclean-libtool</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2899,7 +2936,7 @@
 			</target>
 			<target name="distclean-tags" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>distclean-tags</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2907,7 +2944,7 @@
 			</target>
 			<target name="distcleancheck" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>distcleancheck</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2915,7 +2952,7 @@
 			</target>
 			<target name="distdir" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>distdir</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2923,7 +2960,7 @@
 			</target>
 			<target name="distuninstallcheck" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>distuninstallcheck</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2931,7 +2968,7 @@
 			</target>
 			<target name="dvi" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>dvi</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2939,7 +2976,7 @@
 			</target>
 			<target name="html" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>html</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2947,7 +2984,7 @@
 			</target>
 			<target name="info" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>info</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2955,7 +2992,7 @@
 			</target>
 			<target name="install" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>install</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2963,7 +3000,7 @@
 			</target>
 			<target name="install-data" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>install-data</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2971,7 +3008,7 @@
 			</target>
 			<target name="install-dvi" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>install-dvi</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2979,7 +3016,7 @@
 			</target>
 			<target name="install-exec" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>install-exec</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2987,7 +3024,7 @@
 			</target>
 			<target name="install-html" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>install-html</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -2995,7 +3032,7 @@
 			</target>
 			<target name="install-info" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>install-info</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -3003,7 +3040,7 @@
 			</target>
 			<target name="install-libLTLIBRARIES" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>install-libLTLIBRARIES</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -3011,7 +3048,7 @@
 			</target>
 			<target name="install-man" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>install-man</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -3019,7 +3056,7 @@
 			</target>
 			<target name="install-pdf" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>install-pdf</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -3027,7 +3064,7 @@
 			</target>
 			<target name="install-ps" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>install-ps</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -3035,7 +3072,7 @@
 			</target>
 			<target name="install-strip" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>install-strip</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -3043,7 +3080,7 @@
 			</target>
 			<target name="installcheck" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>installcheck</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -3051,7 +3088,7 @@
 			</target>
 			<target name="installdirs" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>installdirs</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -3059,7 +3096,7 @@
 			</target>
 			<target name="libasiodnp3.la" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>libasiodnp3.la</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -3067,7 +3104,7 @@
 			</target>
 			<target name="libasiopal.la" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>libasiopal.la</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -3075,7 +3112,7 @@
 			</target>
 			<target name="libopendnp3.la" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>libopendnp3.la</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -3083,7 +3120,7 @@
 			</target>
 			<target name="libopenpal.la" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>libopenpal.la</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -3091,7 +3128,7 @@
 			</target>
 			<target name="maintainer-clean" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>maintainer-clean</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -3099,7 +3136,7 @@
 			</target>
 			<target name="Makefile" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>Makefile</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -3107,7 +3144,7 @@
 			</target>
 			<target name="mostlyclean" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>mostlyclean</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -3115,7 +3152,7 @@
 			</target>
 			<target name="mostlyclean-compile" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>mostlyclean-compile</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -3123,7 +3160,7 @@
 			</target>
 			<target name="mostlyclean-libtool" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>mostlyclean-libtool</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -3131,7 +3168,7 @@
 			</target>
 			<target name="pdf" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>pdf</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -3139,7 +3176,7 @@
 			</target>
 			<target name="ps" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>ps</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -3147,7 +3184,7 @@
 			</target>
 			<target name="tags" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>tags</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -3155,7 +3192,7 @@
 			</target>
 			<target name="uninstall" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>uninstall</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
@@ -3163,17 +3200,12 @@
 			</target>
 			<target name="uninstall-libLTLIBRARIES" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
-				<buildArguments/>
+				<buildArguments>-j6</buildArguments>
 				<buildTarget>uninstall-libLTLIBRARIES</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
 				<runAllBuilders>false</runAllBuilders>
 			</target>
 		</buildTargets>
-	</storageModule>
-	<storageModule moduleId="refreshScope" versionNumber="2">
-		<configuration configurationName="Build (GNU)">
-			<resource resourceType="PROJECT" workspacePath="/dnp3"/>
-		</configuration>
 	</storageModule>
 </cproject>

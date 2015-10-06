@@ -29,7 +29,7 @@ using namespace asiodnp3;
 class OutstationJSONTCPServer {
 public:
 	OutstationJSONTCPServer(boost::asio::io_service& io_service, short port, IOutstation* pOutstation, AsyncCommandHandler& handler) :
-			handler_(handler), pOutstation_ { pOutstation }, acceptor_(io_service, tcp::endpoint(tcp::v4(), port)), socket_(io_service) {
+		pOutstation_ { pOutstation }, handler_(handler), acceptor_(io_service, tcp::endpoint(tcp::v4(), port)), socket_(io_service) {
 		start();
 	}
 
@@ -43,11 +43,11 @@ private:
 
 	void subscribe() {
 		while (true) {
-			AsyncCommand command = handler_.pop();
+			std::shared_ptr<AsyncCommand> command = handler_.pop();
 			std::set<std::shared_ptr<JSONTCPSession>>::iterator it;
 			for (it = sessions_.begin(); it != sessions_.end();) {
 				if (it->get()->is_active()) {
-					it->get()->write(command);
+					it->get()->write(command.get());
 					it++;
 				} else {
 					sessions_.erase(it++);

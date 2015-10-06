@@ -47,12 +47,15 @@ public:
 	CommandStatus Select(const AnalogOutputDouble64& command, uint16_t aIndex) override final;
 	CommandStatus Operate(const AnalogOutputDouble64& command, uint16_t aIndex) override final;
 
-	AsyncCommand pop();
+	void Start() override final;
+	void End() override final;
+
+	std::shared_ptr<AsyncCommand> pop();
 
 private:
-	void push(AsyncCommand command);
+	void push(AsyncCommand* command);
 
-	std::queue<AsyncCommand*> queue_;
+	std::queue<std::shared_ptr<AsyncCommand>> queue_;
 	std::mutex queue_mutex_;
 	std::condition_variable queue_cond_;
 };

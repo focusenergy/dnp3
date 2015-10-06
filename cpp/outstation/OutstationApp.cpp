@@ -16,13 +16,14 @@
 #include <asiodnp3/PrintingSOEHandler.h>
 #include <asiodnp3/ConsoleLogger.h>
 #include <asiopal/UTCTimeSource.h>
-#include <cpp/outstation/AsyncCommandHandler.h>
-#include <cpp/outstation/OutstationJSONTCPServer.cpp>
 #include <opendnp3/outstation/Database.h>
 #include <opendnp3/LogLevels.h>
 
 #include <iostream>
 #include <thread>
+
+#include "AsyncCommandHandler.cpp"
+#include "OutstationJSONTCPServer.cpp"
 
 using namespace opendnp3;
 using namespace openpal;
@@ -48,7 +49,7 @@ public:
 		DNP3Manager manager(1);
 		manager.AddLogSubscriber(&ConsoleLogger::Instance());
 
-		IChannel* pChannel = manager.AddTCPServer("server", levels::NORMAL, TimeDuration::Seconds(5), TimeDuration::Seconds(5), "0.0.0.0", 20000);
+		IChannel* pChannel = manager.AddTCPServer("server", levels::NORMAL, ChannelRetry::Default(), "0.0.0.0", 20000);
 		pChannel->AddStateListener([](ChannelState state)
 		{
 			std::cout << "channel state: " << ChannelStateToString(state) << std::endl;
