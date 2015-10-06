@@ -23,17 +23,18 @@ Langauge bindings are available. Consult the documentation.
 
 Ubuntu 14.04 Dependencies
 =========================
-```sudo apt-get install autoconf libtool cmake libasio-dev libboost-all-dev
+```sudo apt-get install cmake libasio-dev libboost-all-dev
 ```
 
 Build Steps
 ===========
 ```bash
-cd thirdparty
-./build.sh
-cd ../
+git submodule update --init
+cmake -DDEMO=on -DTEST=on -DOUTSTATION=on .
+make -j5
 
-autoreconf -f -i
-./configure
-make -j6
+# from simultaneous shells
+./outstation
+./master-demo (press 'o' to send analog output 16)
+nc localhost 3384
 ```
