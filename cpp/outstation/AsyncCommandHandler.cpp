@@ -12,8 +12,6 @@
  * limitations under the License.
  */
 
-#include <iostream>
-
 #include "AsyncCommandHandler.h"
 
 using namespace opendnp3;

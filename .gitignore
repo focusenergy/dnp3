@@ -55,6 +55,7 @@ testopendnp3
 testasiodnp3
 testosslcrypto
 testsecauth
+testoutstation
 
 #demos
 master-demo

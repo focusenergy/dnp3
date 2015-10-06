@@ -12,8 +12,6 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
-
 using namespace opendnp3;
 
 class AsyncCommand {
@@ -38,23 +36,18 @@ public:
 		return idx_;
 	}
 	const ControlRelayOutputBlock* CROB() {
-		std::cout << "crob addr:" << crob_ << std::endl;
 		return crob_;
 	}
 	const AnalogOutputInt16* AOInt16() {
-		std::cout << "aoi16 addr:" << aoInt16_ << std::endl;
 		return aoInt16_;
 	}
 	const AnalogOutputInt32* AOInt32() {
-		std::cout << "aoi32 addr:" << aoInt32_ << std::endl;
 		return aoInt32_;
 	}
 	const AnalogOutputFloat32* AOFloat32() {
-		std::cout << "aof32 addr:" << aoFloat32_ << std::endl;
 		return aoFloat32_;
 	}
 	const AnalogOutputDouble64* AODouble64() {
-		std::cout << "aod64 addr:" << aoDouble64_ << std::endl;
 		return aoDouble64_;
 	}
 

@@ -4,5 +4,5 @@
 	branch = develop
 [submodule "thirdparty/rapidjson"]
 	path = thirdparty/rapidjson
-	url = ../rapidjson/
+	url = ../rapidjson
 	branch = develop
