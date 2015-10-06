@@ -34,7 +34,8 @@ using namespace asiopal;
 using namespace asiodnp3;
 using namespace opendnp3;
 
-int main(int argc, char* argv[]) {
+int main(int argc, char* argv[])
+{
 
 	// Specify what log levels to use. NORMAL is warning and above
 	// You can add all the comms logging by uncommenting below
@@ -74,10 +75,10 @@ int main(int argc, char* argv[]) {
 	// name, log level, command acceptor, and config info. This
 	// returns a thread-safe interface used for sending commands.
 	auto pMaster = pChannel->AddMaster("master",										// id for logging
-			PrintingSOEHandler::Instance(),					// callback for data processing
-			asiodnp3::DefaultMasterApplication::Instance(),	// master application instance
-			stackConfig										// stack configuration
-			);
+	                                   PrintingSOEHandler::Instance(),					// callback for data processing
+	                                   asiodnp3::DefaultMasterApplication::Instance(),	// master application instance
+	                                   stackConfig										// stack configuration
+	                                  );
 
 	// do an integrity poll (Class 3/2/1/0) once per minute
 	auto integrityScan = pMaster->AddClassScan(ClassField::AllClasses(), TimeDuration::Minutes(1));
@@ -88,7 +89,8 @@ int main(int argc, char* argv[]) {
 	// Enable the master. This will start communications.
 	pMaster->Enable();
 
-	do {
+	do
+	{
 		std::cout << "Enter a command" << std::endl;
 		std::cout << "x - exits program" << std::endl;
 		std::cout << "a - performs and ad-hoc range scan" << std::endl;
@@ -100,29 +102,32 @@ int main(int argc, char* argv[]) {
 
 		char cmd;
 		std::cin >> cmd;
-		switch (cmd) {
+		switch (cmd)
+		{
 		case ('a'):
 			pMaster->ScanRange(GroupVariationID(1, 2), 0, 3);
 			break;
 		case ('d'):
 			pMaster->PerformFunction("disable unsol", FunctionCode::DISABLE_UNSOLICITED, { Header::AllObjects(60, 2), Header::AllObjects(60, 3),
-					Header::AllObjects(60, 4) });
+			                         Header::AllObjects(60, 4)
+			                                                                             });
 			break;
-		case ('r'): {
-			auto print = [](const RestartOperationResult& result)
+		case ('r'):
 			{
-				if(result.summary == TaskCompletion::SUCCESS)
+				auto print = [](const RestartOperationResult & result)
 				{
-					std::cout << "Success, Time: " << result.restartTime.GetMilliseconds() << std::endl;
-				}
-				else
-				{
-					std::cout << "Failure: " << TaskCompletionToString(result.summary) << std::endl;
-				}
-			};
-			pMaster->Restart(RestartType::COLD, print);
-			break;
-		}
+					if(result.summary == TaskCompletion::SUCCESS)
+					{
+						std::cout << "Success, Time: " << result.restartTime.GetMilliseconds() << std::endl;
+					}
+					else
+					{
+						std::cout << "Failure: " << TaskCompletionToString(result.summary) << std::endl;
+					}
+				};
+				pMaster->Restart(RestartType::COLD, print);
+				break;
+			}
 		case ('x'):
 			// C++ destructor on DNP3Manager cleans everything up for you
 			return 0;
@@ -132,22 +137,25 @@ int main(int argc, char* argv[]) {
 		case ('e'):
 			exceptionScan.Demand();
 			break;
-		case ('c'): {
-			ControlRelayOutputBlock crob(ControlCode::LATCH_ON);
-			pMaster->SelectAndOperate(crob, 0, PrintingCommandCallback::Get());
-			break;
-		}
-		case ('o'): {
-			// This is an example of synchronously doing a control operation
-			AnalogOutputInt16 analogOutInt16(4242);
-			pMaster->SelectAndOperate(analogOutInt16, 0, PrintingCommandCallback::Get());
-			break;
-		}
+		case ('c'):
+			{
+				ControlRelayOutputBlock crob(ControlCode::LATCH_ON);
+				pMaster->SelectAndOperate(crob, 0, PrintingCommandCallback::Get());
+				break;
+			}
+		case ('o'):
+			{
+				// This is an example of synchronously doing a control operation
+				AnalogOutputInt16 analogOutInt16(4242);
+				pMaster->SelectAndOperate(analogOutInt16, 0, PrintingCommandCallback::Get());
+				break;
+			}
 		default:
 			std::cout << "Unknown action: " << cmd << std::endl;
 			break;
 		}
-	} while (true);
+	}
+	while (true);
 
 	return 0;
 }
