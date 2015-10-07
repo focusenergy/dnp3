@@ -16,6 +16,8 @@
 #include <catch.hpp>
 #include <iostream>
 
+#include <yaml-cpp/yaml.h>
+
 #include "opendnp3/app/ControlRelayOutputBlock.cpp"
 #include "opendnp3/gen/ControlCode.cpp"
 #include "opendnp3/app/AnalogOutput.h"
@@ -33,5 +35,10 @@ TEST_CASE(SUITE("AsyncCommand"))
 	REQUIRE(ac->AOInt16() == NULL);
 }
 
+TEST_CASE(SUITE("YAMLConfig"))
+{
+	YAML::Node config = YAML::LoadFile("cpp/tests/outstation/demo.yml");
+	std::cout << config << std::endl;
+}
 
 

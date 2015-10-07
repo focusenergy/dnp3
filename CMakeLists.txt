@@ -45,7 +45,12 @@ if(SECAUTH OR DNP3_TLS)
 
 endif()
 
-if(OUTSTATION)
+if(OUTSTATION OR TEST)
+    include_directories(./thirdparty/rapidjson/include)
+    include_directories(./thirdparty/yaml-cpp/include)
+
+    add_subdirectory(./thirdparty/yaml-cpp)
+    
     set(Boost_USE_STATIC_LIBS OFF) 
     set(Boost_USE_MULTITHREADED ON)  
     set(Boost_USE_STATIC_RUNTIME OFF) 
@@ -53,10 +58,8 @@ if(OUTSTATION)
 
     if(Boost_FOUND)
         include_directories(${Boost_INCLUDE_DIRS}) 
-    #add_executable(progname file1.cxx file2.cxx) 
-    #target_link_libraries(progname ${Boost_LIBRARIES})
-endif()
-    include_directories(./thirdparty/rapidjson/include)
+    endif()
+
 endif()
 
 if(WIN32)
@@ -195,11 +198,8 @@ if(OUTSTATION)
 
   # ----- outstation executable -----
   add_executable(outstation ./cpp/outstation/OutstationApp.cpp)
-  target_link_libraries (outstation LINK_PUBLIC asiodnp3 ${PTHREAD} ${Boost_LIBRARIES})
-#  target_link_libraries (outstation LINK_PUBLIC asiodnp3 ${PTHREAD})
-#  target_link_libraries(outstation ${Boost_LIBRARIES})
-    
-#  set_target_properties(outstation PROPERTIES FOLDER demos)
+  target_link_libraries (outstation LINK_PUBLIC yaml-cpp asiodnp3 ${PTHREAD} ${Boost_LIBRARIES})
+  #set_target_properties(outstation PROPERTIES FOLDER demos)
 
 endif()
 
@@ -302,6 +302,7 @@ if(TEST)
   # ----- outstation app tests -----
   file(GLOB_RECURSE outstation_TESTSRC ./cpp/tests/outstation/src/*.cpp ./cpp/tests/outstation/src/*.h)
   add_executable (testoutstation ${outstation_TESTSRC})    
+  target_link_libraries (testoutstation yaml-cpp) 
 
 endif()
 
