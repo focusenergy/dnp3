@@ -48,6 +48,7 @@ libosslcrypto.*
 libtestlib.*
 libclangfuzzer.*
 libdnp3mocks.*
+yaml-cpp.*
 
 #test suites
 testopenpal

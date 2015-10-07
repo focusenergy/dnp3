@@ -38,6 +38,8 @@ TEST_CASE(SUITE("AsyncCommand"))
 TEST_CASE(SUITE("YAMLConfig"))
 {
 	YAML::Node config = YAML::LoadFile("cpp/tests/outstation/demo.yml");
+	REQUIRE(config["master"]);
+	REQUIRE(config["outstations"]);
 	std::cout << config << std::endl;
 }
 
