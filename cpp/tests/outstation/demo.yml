@@ -7,7 +7,9 @@ master:
 jsonServer:
   port: 3384
 outstations:
-  - id: demooutstation
+  - id: demostation
+    localAddr: 1
+    remoteAddr: 1
     measDB:
       analogs:
         - idx: 0
