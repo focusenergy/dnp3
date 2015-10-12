@@ -28,8 +28,8 @@ using namespace asiodnp3;
  */
 class OutstationJSONTCPServer {
 public:
-	OutstationJSONTCPServer(boost::asio::io_service& io_service, short port, IOutstation* pOutstation, AsyncCommandHandler& handler) :
-		pOutstation_ { pOutstation }, handler_(handler), acceptor_(io_service, tcp::endpoint(tcp::v4(), port)), socket_(io_service) {
+	OutstationJSONTCPServer(boost::asio::io_service& io_service, short port, std::map<std::string, IOutstation*>& outstations, AsyncCommandHandler& handler) :
+			outstations_ { outstations }, handler_(handler), acceptor_(io_service, tcp::endpoint(tcp::v4(), port)), socket_(io_service) {
 		start();
 	}
 
@@ -61,7 +61,7 @@ private:
 		{
 			if (!error)
 			{
-				std::shared_ptr<JSONTCPSession> pSession = std::make_shared<JSONTCPSession>(std::move(socket_), pOutstation_);
+				std::shared_ptr<JSONTCPSession> pSession = std::make_shared<JSONTCPSession>(std::move(socket_), outstations_);
 				sessions_.insert(pSession);
 				pSession->start();
 			} else {
@@ -71,7 +71,7 @@ private:
 		});
 	}
 
-	IOutstation* pOutstation_;
+	std::map<std::string, IOutstation*> outstations_;
 	AsyncCommandHandler& handler_;
 	std::set<std::shared_ptr<JSONTCPSession>> sessions_;
 

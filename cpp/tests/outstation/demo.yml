@@ -8,7 +8,7 @@ jsonServer:
   port: 3384
 outstations:
   - id: demostation
-    localAddr: 1
+    localAddr: 10
     remoteAddr: 1
     measDB:
       analogs:

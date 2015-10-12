@@ -31,8 +31,8 @@ using namespace rapidjson;
  */
 class JSONTCPSession: public std::enable_shared_from_this<JSONTCPSession> {
 public:
-	JSONTCPSession(tcp::socket socket, IOutstation* pOutstation) :
-			socket_(std::move(socket)), pOutstation_ { pOutstation } {
+	JSONTCPSession(tcp::socket socket, std::map<std::string, IOutstation*>& outstations) :
+			socket_(std::move(socket)), outstations_ { outstations } {
 	}
 
 	void start() {
@@ -140,6 +140,7 @@ private:
 		StringBuffer sb;
 		Writer<StringBuffer> writer(sb);
 		writer.StartObject();
+		/** TODO add outstation id */
 		writer.String("index");
 		writer.Int(command->Idx());
 		if (command->AOInt16() != NULL) {
@@ -192,30 +193,36 @@ private:
 		Document d;
 		d.ParseInsitu(pchar_json_data);
 		if (d.IsObject()) {
-			MeasUpdate update(pOutstation_);
-			if (d.HasMember("type") && d["type"].IsString() && d.HasMember("index") && d["index"].IsInt() && d.HasMember("value")) {
-				const char* type = d["type"].GetString();
-				if (!strcmp(AD64, type)) {
-					if (d["value"].IsDouble()) {
-						update.Update(Analog(d["value"].GetDouble()), d["index"].GetInt());
-					}
-				} else if (!strcmp(BIN, type)) {
-					if (d["value"].IsBool()) {
-						update.Update(Binary(d["value"].GetBool()), d["index"].GetInt());
-					}
-				} else if (!strcmp(CI32, type)) {
-					if (d["value"].IsInt()) {
-						update.Update(Counter(d["value"].GetInt()), d["index"].GetInt());
-					}
-				} else if (!strcmp(FCI32, type)) {
-					if (d["value"].IsInt()) {
-						update.Update(FrozenCounter(d["value"].GetInt()), d["index"].GetInt());
+			if (d.HasMember("id") && d["id"].IsString() && d.HasMember("type") && d["type"].IsString() && d.HasMember("index") && d["index"].IsInt()
+					&& d.HasMember("value")) {
+				if (outstations_.count(d["id"].GetString())) {
+					IOutstation* pOutstation = outstations_[d["id"].GetString()];
+					MeasUpdate update(pOutstation);
+					const char* type = d["type"].GetString();
+					if (!strcmp(AD64, type)) {
+						if (d["value"].IsDouble()) {
+							update.Update(Analog(d["value"].GetDouble()), d["index"].GetInt());
+						}
+					} else if (!strcmp(BIN, type)) {
+						if (d["value"].IsBool()) {
+							update.Update(Binary(d["value"].GetBool()), d["index"].GetInt());
+						}
+					} else if (!strcmp(CI32, type)) {
+						if (d["value"].IsInt()) {
+							update.Update(Counter(d["value"].GetInt()), d["index"].GetInt());
+						}
+					} else if (!strcmp(FCI32, type)) {
+						if (d["value"].IsInt()) {
+							update.Update(FrozenCounter(d["value"].GetInt()), d["index"].GetInt());
+						}
+					} else {
+						std::cerr << "JSONTCPSession: type attribute[" << type << "]not recognized" << std::endl;
 					}
 				} else {
-					std::cerr << "JSONTCPSession: type attribute[" << type << "]not recognized" << std::endl;
+					std::cerr << "JSONTCPSession: object id not found in outstations map" << std::endl;
 				}
 			} else {
-				std::cerr << "JSONTCPSession: object missing type attribute" << std::endl;
+				std::cerr << "JSONTCPSession: object missing id or type attribute" << std::endl;
 			}
 		} else {
 			std::cerr << "JSONTCPSession: not an object" << std::endl;
@@ -233,6 +240,6 @@ private:
 	int64_t data_sz_ = 0;
 
 	tcp::socket socket_;
-	IOutstation* pOutstation_;
+	std::map<std::string, IOutstation*> outstations_;
 }
 ;
