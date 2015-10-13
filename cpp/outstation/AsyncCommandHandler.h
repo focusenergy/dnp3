@@ -20,8 +20,6 @@
 #include<mutex>
 #include<queue>
 
-#include "AsyncCommand.cpp"
-
 using namespace opendnp3;
 
 /**
@@ -30,34 +28,30 @@ using namespace opendnp3;
  */
 class AsyncCommandHandler: public ICommandHandler {
 public:
-	~AsyncCommandHandler() override final;
+	AsyncCommandHandler(const char* id, AsyncCommandQueue& commandQueue);
 
-	CommandStatus Select(const ControlRelayOutputBlock& command, uint16_t aIndex) override final;
-	CommandStatus Operate(const ControlRelayOutputBlock& command, uint16_t aIndex) override final;
+	CommandStatus Select(const ControlRelayOutputBlock& command, uint16_t index) override final;
+	CommandStatus Operate(const ControlRelayOutputBlock& command, uint16_t index) override final;
 
-	CommandStatus Select(const AnalogOutputInt16& command, uint16_t aIndex) override final;
-	CommandStatus Operate(const AnalogOutputInt16& command, uint16_t aIndex) override final;
+	CommandStatus Select(const AnalogOutputInt16& command, uint16_t index) override final;
+	CommandStatus Operate(const AnalogOutputInt16& command, uint16_t index) override final;
 
-	CommandStatus Select(const AnalogOutputInt32& command, uint16_t aIndex) override final;
-	CommandStatus Operate(const AnalogOutputInt32& command, uint16_t aIndex) override final;
+	CommandStatus Select(const AnalogOutputInt32& command, uint16_t index) override final;
+	CommandStatus Operate(const AnalogOutputInt32& command, uint16_t index) override final;
 
-	CommandStatus Select(const AnalogOutputFloat32& command, uint16_t aIndex) override final;
-	CommandStatus Operate(const AnalogOutputFloat32& command, uint16_t aIndex) override final;
+	CommandStatus Select(const AnalogOutputFloat32& command, uint16_t index) override final;
+	CommandStatus Operate(const AnalogOutputFloat32& command, uint16_t index) override final;
 
-	CommandStatus Select(const AnalogOutputDouble64& command, uint16_t aIndex) override final;
-	CommandStatus Operate(const AnalogOutputDouble64& command, uint16_t aIndex) override final;
+	CommandStatus Select(const AnalogOutputDouble64& command, uint16_t index) override final;
+	CommandStatus Operate(const AnalogOutputDouble64& command, uint16_t index) override final;
 
-	void Start() override final;
-	void End() override final;
-
-	std::shared_ptr<AsyncCommand> pop();
+protected:
+	virtual void Start() override;
+	virtual void End() override;
 
 private:
-	void push(AsyncCommand* command);
-
-	std::queue<std::shared_ptr<AsyncCommand>> queue_;
-	std::mutex queue_mutex_;
-	std::condition_variable queue_cond_;
+	const char* id_;
+	AsyncCommandQueue& queue_;
 };
 
 #endif

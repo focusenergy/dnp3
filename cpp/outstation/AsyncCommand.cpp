@@ -16,20 +16,24 @@ using namespace opendnp3;
 
 class AsyncCommand {
 public:
-	AsyncCommand(const ControlRelayOutputBlock* crob, uint16_t idx) :
-			idx_(idx), crob_(crob), aoInt16_(), aoInt32_(), aoFloat32_(), aoDouble64_() {
+	AsyncCommand(const ControlRelayOutputBlock* crob, const char* id, uint16_t idx) :
+			id_(id), idx_(idx), crob_(crob), aoInt16_(), aoInt32_(), aoFloat32_(), aoDouble64_() {
 	}
-	AsyncCommand(const AnalogOutputInt16* aoInt16, uint16_t idx) :
-			idx_(idx), crob_(), aoInt16_(aoInt16), aoInt32_(), aoFloat32_(), aoDouble64_() {
+	AsyncCommand(const AnalogOutputInt16* aoInt16, const char* id, uint16_t idx) :
+			id_(id), idx_(idx), crob_(), aoInt16_(aoInt16), aoInt32_(), aoFloat32_(), aoDouble64_() {
 	}
-	AsyncCommand(const AnalogOutputInt32* aoInt32, uint16_t idx) :
-			idx_(idx), crob_(), aoInt16_(), aoInt32_(aoInt32), aoFloat32_(), aoDouble64_() {
+	AsyncCommand(const AnalogOutputInt32* aoInt32, const char* id, uint16_t idx) :
+			id_(id), idx_(idx), crob_(), aoInt16_(), aoInt32_(aoInt32), aoFloat32_(), aoDouble64_() {
 	}
-	AsyncCommand(const AnalogOutputFloat32* aoFloat32, uint16_t idx) :
-			idx_(idx), crob_(), aoInt16_(), aoInt32_(), aoFloat32_(aoFloat32), aoDouble64_() {
+	AsyncCommand(const AnalogOutputFloat32* aoFloat32, const char* id, uint16_t idx) :
+			id_(id), idx_(idx), crob_(), aoInt16_(), aoInt32_(), aoFloat32_(aoFloat32), aoDouble64_() {
 	}
-	AsyncCommand(const AnalogOutputDouble64* aoDouble64, uint16_t idx) :
-			idx_(idx), crob_(), aoInt16_(), aoInt32_(), aoFloat32_(), aoDouble64_(aoDouble64) {
+	AsyncCommand(const AnalogOutputDouble64* aoDouble64, const char* id, uint16_t idx) :
+			id_(id), idx_(idx), crob_(), aoInt16_(), aoInt32_(), aoFloat32_(), aoDouble64_(aoDouble64) {
+	}
+
+	const char* Id() {
+		return id_;
 	}
 
 	uint16_t Idx() {
@@ -52,6 +56,7 @@ public:
 	}
 
 private:
+	const char* id_;
 	uint16_t idx_;
 	const ControlRelayOutputBlock* crob_;
 	const AnalogOutputInt16* aoInt16_;

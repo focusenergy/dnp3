@@ -31,7 +31,7 @@ using namespace std;
 TEST_CASE(SUITE("AsyncCommand"))
 {
 	ControlRelayOutputBlock* crob = new ControlRelayOutputBlock(ControlCode::LATCH_ON, (uint8_t)1, (uint32_t) 2, (uint32_t) 3, CommandStatus::SUCCESS);
-	AsyncCommand* ac = new AsyncCommand(crob, 123);
+	AsyncCommand* ac = new AsyncCommand(crob, (char *) "testout", 123);
 	REQUIRE(ac->AOInt16() == NULL);
 }
 

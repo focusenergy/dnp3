@@ -140,7 +140,8 @@ private:
 		StringBuffer sb;
 		Writer<StringBuffer> writer(sb);
 		writer.StartObject();
-		/** TODO add outstation id */
+		writer.String("id");
+		writer.String(command->Id());
 		writer.String("index");
 		writer.Int(command->Idx());
 		if (command->AOInt16() != NULL) {

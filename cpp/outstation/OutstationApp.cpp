@@ -23,9 +23,11 @@
 #include <opendnp3/LogLevels.h>
 
 #include <boost/program_options.hpp>
+#include <boost/signals2.hpp>
 
 #include <yaml-cpp/yaml.h>
 
+#include "AsyncCommandQueue.cpp"
 #include "AsyncCommandHandler.cpp"
 #include "OutstationAppConfig.cpp"
 #include "OutstationJSONTCPServer.cpp"
@@ -63,10 +65,10 @@ public:
 			std::cout << "channel state: " << ChannelStateToString(state) << std::endl;
 		});
 
+		AsyncCommandQueue commandQueue;
 		std::map<std::string, IOutstation*> outstations;
-		AsyncCommandHandler handler;
 		for (int i = 0; i < config.getOutstationsCount(); i++) {
-			outstations.insert(std::pair<std::string, IOutstation*>(config.getOutstationId(i), config.configureOutstation(i, pChannel, handler)));
+			outstations.insert(std::pair<std::string, IOutstation*>(config.getOutstationId(i), config.configureOutstation(i, pChannel, commandQueue)));
 		}
 
 		/** configurations were successful, start all outstations */
@@ -74,7 +76,7 @@ public:
 			outstation.second->Enable();
 		}
 
-		OutstationJSONTCPServer s(io_service_, 3384, outstations, handler);
+		OutstationJSONTCPServer s(io_service_, 3384, outstations, commandQueue);
 		io_service_.run();
 
 	}

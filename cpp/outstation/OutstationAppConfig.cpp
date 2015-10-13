@@ -42,7 +42,7 @@ public:
 		return configNode_["outstations"][idx]["id"].as<std::string>();
 	}
 
-	IOutstation* configureOutstation(int idx, IChannel* pChannel, AsyncCommandHandler& handler) {
+	IOutstation* configureOutstation(int idx, IChannel* pChannel, AsyncCommandQueue& queue) {
 		/** TODO consider decoupling dnp3 from configuration class **/
 		YAML::Node outstationNode = configNode_["outstations"][idx];
 		int binaries, doubleBinaries, analogs, counters, frozenCounters, binaryOutputStatii, analogOutputStatii, timeAndIntervals;
@@ -59,8 +59,9 @@ public:
 			/** using default demo configuration DatabaseTemplate::AllTypes(10), EventBufferConfig::AllTypes(10); **/
 			binaries = doubleBinaries = analogs = counters = frozenCounters = binaryOutputStatii = analogOutputStatii = timeAndIntervals = 10;
 		}
-		IOutstation* pOutstation = pChannel->AddOutstation(((std::string) outstationNode["id"].as<std::string>()).c_str(), handler,
-				DefaultOutstationApplication::Instance(),
+		const char* outstationId = outstationNode["id"].as<std::string>().c_str();
+		AsyncCommandHandler* handler = new AsyncCommandHandler(outstationId, queue);
+		IOutstation* pOutstation = pChannel->AddOutstation(outstationId, *handler, DefaultOutstationApplication::Instance(),
 				createStackConfig(outstationNode, binaries, doubleBinaries, analogs, counters, frozenCounters, binaryOutputStatii, analogOutputStatii,
 						timeAndIntervals));
 		configureDatabaseConfigView(pOutstation->GetConfigView(), binaries, doubleBinaries, analogs, counters, frozenCounters, binaryOutputStatii,
