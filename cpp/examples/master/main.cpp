@@ -74,13 +74,11 @@ int main(int argc, char* argv[])
 	// Create a new master on a previously declared port, with a
 	// name, log level, command acceptor, and config info. This
 	// returns a thread-safe interface used for sending commands.
-	auto pMaster = pChannel->AddMaster(
-	                   "master",										// id for logging
-	                   PrintingSOEHandler::Instance(),					// callback for data processing
-	                   asiodnp3::DefaultMasterApplication::Instance(),	// master application instance
-	                   stackConfig										// stack configuration
-	               );
-
+	auto pMaster = pChannel->AddMaster("master",										// id for logging
+	                                   PrintingSOEHandler::Instance(),					// callback for data processing
+	                                   asiodnp3::DefaultMasterApplication::Instance(),	// master application instance
+	                                   stackConfig										// stack configuration
+	                                  );
 
 	// do an integrity poll (Class 3/2/1/0) once per minute
 	auto integrityScan = pMaster->AddClassScan(ClassField::AllClasses(), TimeDuration::Minutes(1));
@@ -104,45 +102,52 @@ int main(int argc, char* argv[])
 
 		char cmd;
 		std::cin >> cmd;
-		switch(cmd)
+		switch (cmd)
 		{
-		case('a') :
+		case ('a'):
 			pMaster->ScanRange(GroupVariationID(1, 2), 0, 3);
 			break;
-		case('d') :
-			pMaster->PerformFunction("disable unsol", FunctionCode::DISABLE_UNSOLICITED,
-			{ Header::AllObjects(60, 2), Header::AllObjects(60, 3), Header::AllObjects(60, 4) }
-			                        );
+		case ('d'):
+			pMaster->PerformFunction("disable unsol", FunctionCode::DISABLE_UNSOLICITED, { Header::AllObjects(60, 2), Header::AllObjects(60, 3),
+			                         Header::AllObjects(60, 4)
+			                                                                             });
 			break;
-		case('r') :
-		{
-			auto print = [](const RestartOperationResult& result)
+		case ('r'):
 			{
-			  if(result.summary == TaskCompletion::SUCCESS)
-			  {
-			    std::cout << "Success, Time: " << result.restartTime.GetMilliseconds() << std::endl;
-			  }
-			  else
-			  {
-			    std::cout << "Failure: " << TaskCompletionToString(result.summary) << std::endl;
-			  }    
-			};
-			pMaster->Restart(RestartType::COLD, print);
-			break;
-		}
-		case('x'):
+				auto print = [](const RestartOperationResult & result)
+				{
+					if(result.summary == TaskCompletion::SUCCESS)
+					{
+						std::cout << "Success, Time: " << result.restartTime.GetMilliseconds() << std::endl;
+					}
+					else
+					{
+						std::cout << "Failure: " << TaskCompletionToString(result.summary) << std::endl;
+					}
+				};
+				pMaster->Restart(RestartType::COLD, print);
+				break;
+			}
+		case ('x'):
 			// C++ destructor on DNP3Manager cleans everything up for you
 			return 0;
-		case('i'):
+		case ('i'):
 			integrityScan.Demand();
 			break;
-		case('e'):
+		case ('e'):
 			exceptionScan.Demand();
 			break;
-		case('c'):
+		case ('c'):
 			{
-				ControlRelayOutputBlock crob(ControlCode::LATCH_ON);											
-				pMaster->SelectAndOperate(crob, 0, PrintingCommandCallback::Get());				
+				ControlRelayOutputBlock crob(ControlCode::LATCH_ON);
+				pMaster->SelectAndOperate(crob, 0, PrintingCommandCallback::Get());
+				break;
+			}
+		case ('o'):
+			{
+				// This is an example of synchronously doing a control operation
+				AnalogOutputInt16 analogOutInt16(4242);
+				pMaster->SelectAndOperate(analogOutInt16, 0, PrintingCommandCallback::Get());
 				break;
 			}
 		default:
@@ -150,7 +155,7 @@ int main(int argc, char* argv[])
 			break;
 		}
 	}
-	while(true);
+	while (true);
 
 	return 0;
 }

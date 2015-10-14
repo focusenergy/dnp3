@@ -6,6 +6,7 @@ set(OPENDNP3_MICRO_VERSION 0)
 set(OPENDNP3_VERSION ${OPENDNP3_MAJOR_VERSION}.${OPENDNP3_MINOR_VERSION}.${OPENDNP3_MICRO_VERSION})
 
 # various optional libraries and projects
+option(OUTSTATION "Build outstation application" OFF)
 option(DEMO "Build demo applications" OFF)
 option(TEST "Build tests" OFF)
 option(FULL "Build all optional projects (secauth, demos, tests)" OFF)
@@ -18,6 +19,7 @@ option(STATICLIBS "Builds static versions of all installed libraries" OFF)
 option(COVERAGE "Builds the libraries with coverage info for gcov" OFF)
 
 if(FULL)
+	set(OUTSTATION ON)
 	set(DEMO ON)
 	set(TEST ON)
 	set(SECAUTH ON)
@@ -40,6 +42,23 @@ if(SECAUTH OR DNP3_TLS)
    if(WIN32)
      include_directories(${OPENSSL_INCLUDE_DIR})
    endif()
+
+endif()
+
+if(OUTSTATION OR TEST)
+    include_directories(./thirdparty/rapidjson/include)
+    include_directories(./thirdparty/yaml-cpp/include)
+
+    add_subdirectory(./thirdparty/yaml-cpp)
+    
+    set(Boost_USE_STATIC_LIBS OFF) 
+    set(Boost_USE_MULTITHREADED ON)  
+    set(Boost_USE_STATIC_RUNTIME OFF) 
+    find_package(Boost 1.54.0 COMPONENTS system thread program_options) 
+
+    if(Boost_FOUND)
+        include_directories(${Boost_INCLUDE_DIRS}) 
+    endif()
 
 endif()
 
@@ -93,17 +112,8 @@ endif()
 
 set(CMAKE_REQUIRED_FLAGS ${CMAKE_CXX_FLAGS})
 
-if (ASIO_HOME)
-  message("ASIO_HOME defined in cache: ${ASIO_HOME}")
-  include_directories(${ASIO_HOME})  
-else()
-  if(DEFINED ENV{ASIO_HOME})
-    message("ASIO_HOME defined in environment: $ENV{ASIO_HOME}")  
-    include_directories($ENV{ASIO_HOME})    
-  else()
-    message("ASIO_HOME was not defined. ASIO expected to be on include path")  
-  endif()
-endif()
+# include path for asio submodule
+include_directories(./thirdparty/asio/asio/include)
 
 # include paths for all the local libraries
 include_directories(./cpp/libs/src)
@@ -183,6 +193,15 @@ endif()
 # common pattern and exludes for all installed headers
 set(INSTALL_ARGS FILES_MATCHING PATTERN "*.h" PATTERN ".deps" EXCLUDE PATTERN ".libs" EXCLUDE)
 install(DIRECTORY ./cpp/libs/include/ DESTINATION include ${INSTALL_ARGS})
+
+if(OUTSTATION)
+
+  # ----- outstation executable -----
+  add_executable(outstation ./cpp/outstation/OutstationApp.cpp)
+  target_link_libraries (outstation LINK_PUBLIC yaml-cpp asiodnp3 ${PTHREAD} ${Boost_LIBRARIES})
+  #set_target_properties(outstation PROPERTIES FOLDER demos)
+
+endif()
 
 if(DEMO)
 
@@ -279,6 +298,11 @@ if(TEST)
     set_target_properties(testosslcrypto PROPERTIES FOLDER tests)          
   
   endif()
+  
+  # ----- outstation app tests -----
+  file(GLOB_RECURSE outstation_TESTSRC ./cpp/tests/outstation/src/*.cpp ./cpp/tests/outstation/src/*.h)
+  add_executable (testoutstation ${outstation_TESTSRC})    
+  target_link_libraries (testoutstation yaml-cpp) 
 
 endif()
 

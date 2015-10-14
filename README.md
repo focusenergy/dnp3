@@ -16,5 +16,25 @@ Overview
 
 Opendnp3 is a portable, scalable, and rigorously tested implementation 
 of the DNP3 (www.dnp.org) protocol stack written in C++11. The library 
-is designed for high-performance applications like many concurrent TCP
-sessions or huge device simulations. It also embeds very nicely on Linux.
+can handle the largest front end processor loads, but can also be
+ported to run on various microcontrollers.
+
+Langauge bindings are available. Consult the documentation.
+
+Ubuntu 14.04 Dependencies
+=========================
+```sudo apt-get install cmake libasio-dev libboost-all-dev
+```
+
+Build Steps
+===========
+```bash
+git submodule update --init
+cmake -DDEMO=on -DTEST=on -DOUTSTATION=on .
+make -j5
+
+# from simultaneous shells
+./outstation
+./master-demo (press 'o' to send analog output 16)
+nc localhost 3384
+```

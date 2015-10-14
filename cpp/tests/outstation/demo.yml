@@ -1,0 +1,35 @@
+master:
+  id: demomaster
+  levels: normal
+  channelRetry: default
+  host: 0.0.0.0
+  port: 20000
+jsonServer:
+  port: 3384
+outstations:
+  - id: demostation
+    localAddr: 10
+    remoteAddr: 1
+    measDB:
+      analogs:
+        - idx: 0
+          variation: StaticAnalogVariation::Group30Var5
+          metadata:
+            - clazz: PointClass::Class2
+            - variation: EventAnalogVariation::Group32Var7
+        - idx: 1
+        - idx: 2
+      binaries:
+        - idx: 0
+      doubleBinaries:
+        - idx: 0
+      counters:
+        - idx: 0
+      frozenCounters:
+        - idx: 0
+      binaryOutputStatii:
+        - idx: 0
+      analogOutputStatii:
+        - idx: 0
+      timeAndIntervals:
+        - idx: 0
