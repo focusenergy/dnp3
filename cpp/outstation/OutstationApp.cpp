@@ -54,11 +54,14 @@ void signal_handler(int signal_number) {
  */
 class OutstationApp {
 public:
-	void start(OutstationAppConfig& config) {
-		DNP3Manager manager(1);
-		manager.AddLogSubscriber(&ConsoleLogger::Instance());
+	OutstationApp() :
+			manager_(1) {
+	}
 
-		IChannel* pChannel = manager.AddTCPServer(config.getMasterId(), levels::NORMAL, ChannelRetry::Default(), config.getMasterHost(),
+	void start(OutstationAppConfig& config) {
+		manager_.AddLogSubscriber(&ConsoleLogger::Instance());
+
+		IChannel* pChannel = manager_.AddTCPServer(config.getMasterId(), levels::NORMAL, ChannelRetry::Default(), config.getMasterHost(),
 				config.getMasterPort());
 		pChannel->AddStateListener([](ChannelState state)
 		{
@@ -82,10 +85,11 @@ public:
 	}
 
 	void stop() {
-		// TODO shutdown correctly, consider DNP3Manager.shutdown()
 		io_service_.stop();
+		manager_.Shutdown();
 	}
 private:
+	DNP3Manager manager_;
 	boost::asio::io_service io_service_;
 };
 
